@@ -1,0 +1,51 @@
+<!doctype html>
+<html>
+  <head>
+    <title>Repo iframe history.pushState bug in iOS</title>
+    <script type="text/javascript">
+      function hackLog(message) {
+        var div = document.getElementById("output");
+        div.innerHTML += ("<p>" + message + "</p>");
+      }
+
+      function logHistoryLength() {
+        var msg = "history.length = " + history.length;
+        console.log(msg);
+        hackLog(msg);
+      }
+
+      var num_tests = 0;
+
+      function runtest() {
+        hackLog("<hr><p>Running test #" + num_tests + "</p>");
+        var iframe = document.getElementsByTagName("iframe")[0];
+        iframe.contentWindow.location.hash = 'test' + (num_tests++);
+        logHistoryLength();
+      }
+    </script>
+  </head>
+  <body>
+    <pre>
+    This is a repo test for crbug.com/685644.
+
+    Steps to reproduce:
+    - Open this page in a new tab
+    - Tab on "runtest"
+    - Long tab on Back button
+    - Repeate a few times
+
+    Expected behavior:
+    - history.length increments by 1 each time you tab on "runtest"
+    - Back navigation history should contain (history.length - 1) entries
+
+    Actual behavior:
+    - history.length is incremented
+    - But back navigation history does not grow
+    </pre>
+    <input type="button" onclick="runtest();" value="runtest">
+    <div id="output"></div>
+    <!-- what is <noscript>? -->
+    <p><iframe src="blank.html"></iframe></p>
+  </body>
+</html>
+
