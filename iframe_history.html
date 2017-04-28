@@ -27,7 +27,7 @@
         var url = document.getElementById("new_url").value;
         hackLog("<hr><p>Change IFrame Location To " + url + "</p>");
         var iframe = document.getElementsByTagName("iframe")[0];
-        iframe.contentWindow.location.href = "http://" + url;
+        iframe.contentWindow.location.href = "https://" + url;
         setTimeout(logHistoryLength, 100);
       }
 
@@ -35,7 +35,7 @@
         var url = document.getElementById("new_url").value;
         hackLog("<hr><p>Change page Location To " + url + "</p>");
         var iframe = document.getElementsByTagName("iframe")[0];
-        window.location.href = "http://" + url;
+        window.location.href = "https://" + url;
       }
     </script>
   </head>
@@ -66,7 +66,7 @@
     <p>Debug</p>
     <p><input type="button" onclick="logHistoryLength();" value="Init"></p>
     <p>
-      http://<input type="text" id="new_url" value="" width="50em">
+      https://<input type="text" id="new_url" value="" width="50em">
       <input type="button" onclick="changeIFrameLocation();" value="Change iframe Location">
       <input type="button" onclick="changePageLocation();" value="Change Page Location">
     </p>
