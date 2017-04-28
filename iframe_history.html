@@ -20,7 +20,7 @@
         hackLog("<hr><p>Running test #" + num_tests + "</p>");
         var iframe = document.getElementsByTagName("iframe")[0];
         iframe.contentWindow.location.hash = 'test' + (num_tests++);
-        logHistoryLength();
+        setTimeout(logHistoryLength, 100);
       }
 
       function changeIFrameLocation() {
@@ -28,7 +28,14 @@
         hackLog("<hr><p>Change IFrame Location To " + url + "</p>");
         var iframe = document.getElementsByTagName("iframe")[0];
         iframe.contentWindow.location.href = "http://" + url;
-        logHistoryLength();
+        setTimeout(logHistoryLength, 100);
+      }
+
+      function changePageLocation() {
+        var url = document.getElementById("new_url").value;
+        hackLog("<hr><p>Change page Location To " + url + "</p>");
+        var iframe = document.getElementsByTagName("iframe")[0];
+        window.location.href = "http://" + url;
       }
     </script>
   </head>
@@ -57,9 +64,11 @@
 
     <hr>
     <p>Debug</p>
+    <p><input type="button" onclick="logHistoryLength();" value="Init"></p>
     <p>
       http://<input type="text" id="new_url" value="" width="50em">
       <input type="button" onclick="changeIFrameLocation();" value="Change iframe Location">
+      <input type="button" onclick="changePageLocation();" value="Change Page Location">
     </p>
   </body>
 </html>
