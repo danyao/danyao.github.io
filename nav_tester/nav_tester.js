@@ -29,9 +29,9 @@ function run(cmd) {
   } else if (cmd == "location.reload()") {
     location.reload();
   } else if (cmd == "history.pushState()") {
-    history.pushState({name: "pushState"}, "Unused Title", "1.html?q=history-pushState");
+    history.pushState({name: "pushState"}, "Unused Title", "2.html?q=history-pushState");
   } else if (cmd == "history.replaceState()") {
-    history.replaceState({name: "replaceState"}, "Unused Title", "1.html?q=history-replaceState");
+    history.replaceState({name: "replaceState"}, "Unused Title", "2.html?q=history-replaceState");
   } else if (cmd == "history.back()") {
     history.back();
   } else if (cmd == "history.forward()") {
