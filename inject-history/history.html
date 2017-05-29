@@ -1,0 +1,31 @@
+<html>
+  <head>
+  <script>
+    var entries = [
+      "https://apple.com",
+      "https://amazon.com",
+      "https://wikipedia.org"
+    ];
+
+    function getRestoreURL(url) {
+      if (url.indexOf(document.location.origin + '/redirect.html') === 0) {
+        return url;
+      }
+      return 'redirect.html?' + encodeURIComponent(url);
+    }
+
+    history.replaceState({foo: "foo"}, "unused", getRestoreURL(entries[0]));
+    for (var i = 1; i < entries.length; i++) {
+      history.pushState({foo: "foo"}, "unused", getRestoreURL(entries[i]));
+    }
+    history.go(-1);
+
+    setTimeout(function() {
+      location.reload();
+    }, 0);
+  </script>
+  </head>
+  <body>
+    <p>This page injects history.</p>
+  </body>
+</html>
