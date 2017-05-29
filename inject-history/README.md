@@ -7,10 +7,11 @@ Copy `history.html` and `simple-http-server.py` into the same directory. Then
 run:
 
 ```
-python ./simple-http-server.py
+python ./simple-http-server.py [Optional: port]
 ```
 
-This brings up a web server at `locahost:8000`.
+This brings up a web server at `locahost:8000` (or the port number you
+specified).
 
 ## Test
 Visit `http://locahost:8000/history.html` in any browser. This should inject 3

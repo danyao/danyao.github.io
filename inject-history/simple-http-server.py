@@ -1,5 +1,6 @@
 import SimpleHTTPServer
 import SocketServer
+import sys
 import urllib
 
 class MyHandler(SimpleHTTPServer.SimpleHTTPRequestHandler):
@@ -18,6 +19,9 @@ class MyHandler(SimpleHTTPServer.SimpleHTTPRequestHandler):
       self.end_headers()
 
 PORT = 8000
+if len(sys.argv) > 1:
+  PORT = int(sys.argv[1])
+
 handler = SocketServer.TCPServer(("", PORT), MyHandler)
-print "serving at port 8000"
+print "serving at port %d" % PORT
 handler.serve_forever()
