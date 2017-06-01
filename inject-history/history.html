@@ -6,12 +6,21 @@
       "https://amazon.com",
       "https://wikipedia.org"
     ];
+    var redirect_method = window.location.search.substring(1);
 
     function getRestoreURL(url) {
-      if (url.indexOf(document.location.origin + '/redirect.html') === 0) {
+      var redirect = '/redirect.html';
+      if (redirect_method == 'js') {
+        redirect = 'redirect.html';
+      } else if (redirect_method == 'meta') {
+        redirect = 'redirect-meta.html';
+      }
+
+      if (url.indexOf(document.location.origin + redirect) === 0) {
         return url;
       }
-      return 'redirect.html?' + encodeURIComponent(url);
+      console.log("redirect to " + redirect);
+      return redirect + '?' + encodeURIComponent(url);
     }
 
     history.replaceState({foo: "foo"}, "unused", getRestoreURL(entries[0]));

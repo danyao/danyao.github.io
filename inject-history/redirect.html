@@ -1,0 +1,14 @@
+<html>
+  <head>
+  <script>
+    var query = window.location.search.substring(1);
+    var target = decodeURIComponent(query);
+
+    document.write("This page will redirect to " + target);
+    window.setTimeout(function(){
+    window.location.replace(target);
+    }, 2);
+  </script>
+  </head>
+  <body>This page redirects.</body>
+</html>
