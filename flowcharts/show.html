@@ -1,0 +1,81 @@
+<!doctype=html>
+<html>
+  <head>
+    <script type="text/javascript" src="viz-lite.js"></script>
+<style>
+  #source {
+    margin: 10px;
+    padding: 10px;
+    font-family: monospace;
+  }
+
+  .hidden {
+    visibility: hidden;
+  }
+
+  .visible {
+    visibility: visible;
+  }
+</style>
+  </head>
+  <body>
+    <div id="container" class="hidden">
+    <div id="diagram"></div>
+    <textarea cols="100" rows="20" id="source"></textarea><br/>
+    <input type="button" value="Update Diagram" onclick="updateDiagram()"/>
+    </div>
+    <script>
+      const graphs = [
+        "test",
+        "webkit_navigation"];
+
+      function isKnownFile(filename) {
+        for (var i in graphs) {
+          if (filename == graphs[i])
+            return true;
+        }
+        console.log("Unknown file: ", filename);
+        return false;
+      }
+
+      function $(id) {
+        return document.getElementById(id);
+      }
+
+      function toggleHidden(element) {
+        element.classList.toggle("hidden");
+      }
+
+      function readFile(filename) {
+        if (!isKnownFile(filename)) {
+          return;
+        }
+
+        var request = new XMLHttpRequest();
+        request.open("GET", "dot/" + filename + ".dot");
+        request.onload = function(e) {
+          var text = request.responseText;
+          $("source").value = text;
+          updateDiagram();
+          toggleHidden($("container"));
+        };
+        request.send();
+      }
+
+      function updateDiagram() {
+        var result = Viz($("source").value, { format: "svg" });
+        $("diagram").innerHTML = result;
+      }
+
+      function parseDiagramName() {
+        var params = new URLSearchParams(location.search.slice(1));
+        if (params.has("chart")) {
+          return params.get("chart");
+        }
+        return "test";
+      }
+
+      readFile(parseDiagramName());
+    </script>
+  </body>
+</html>
