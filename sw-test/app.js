@@ -2,13 +2,16 @@
 
 if ('serviceWorker' in navigator) {
   navigator.serviceWorker.register('/sw-test/sw.js', { scope: '/sw-test/' }).then(function(reg) {
-
+    var div = document.getElementById('test');
     if(reg.installing) {
       console.log('Service worker installing');
+      div.innerText = 'Service worker installing';
     } else if(reg.waiting) {
       console.log('Service worker installed');
+      div.innerText = 'Service worker installed';
     } else if(reg.active) {
       console.log('Service worker active');
+      div.innerText = 'Service worker active';
     }
 
   }).catch(function(error) {
