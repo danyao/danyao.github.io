@@ -2,15 +2,15 @@ self.addEventListener('install', function(event) {
   event.waitUntil(
     caches.open('v1').then(function(cache) {
       return cache.addAll([
-        '/sw-test/',
-        '/sw-test/index.html',
-        '/sw-test/style.css',
-        '/sw-test/app.js',
-        '/sw-test/image-list.js',
-        '/sw-test/star-wars-logo.jpg',
-        '/sw-test/gallery/bountyHunters.jpg',
-        '/sw-test/gallery/myLittleVader.jpg',
-        '/sw-test/gallery/snowTroopers.jpg'
+        '/swtest/',
+        '/swtest/index.html',
+        '/swtest/style.css',
+        '/swtest/app.js',
+        '/swtest/image-list.js',
+        '/swtest/star-wars-logo.jpg',
+        '/swtest/gallery/bountyHunters.jpg',
+        '/swtest/gallery/myLittleVader.jpg',
+        '/swtest/gallery/snowTroopers.jpg'
       ]);
     })
   );
@@ -28,7 +28,7 @@ self.addEventListener('fetch', function(event) {
         // we need to save clone to put one copy in cache
         // and serve second one
         let responseClone = response.clone();
-        
+
         caches.open('v1').then(function (cache) {
           cache.put(event.request, responseClone);
         });
