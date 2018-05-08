@@ -1,0 +1,15 @@
+<!doctype=html>
+<html>
+  <head>
+  </head>
+  <body>
+    Hello!
+    <div id="test"></div>
+  <script>
+console.log("hello");
+  if (navigator.serviceWorker) {
+    document.getElementById("test").innerText = "navigator.serviceWorker exists";
+  }
+  </script>
+  </body>
+</html>

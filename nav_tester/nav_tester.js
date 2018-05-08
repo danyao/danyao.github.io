@@ -9,6 +9,7 @@ function loadTestPage() {
     "history.replaceState()",
     "history.back()",
     "history.forward()",
+    "add hash",
     "dump()"];
 
   var html = [];
@@ -38,6 +39,8 @@ function run(cmd) {
     history.forward();
   } else if (cmd == "dump()") {
     dump();
+  } else if (cmd == "add hash") {
+    location.href = location.href + "#hash";
   } else {
     console.log("Unknown command: ", cmd);
   }

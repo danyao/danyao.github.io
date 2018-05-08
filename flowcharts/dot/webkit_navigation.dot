@@ -1,0 +1,23 @@
+digraph {
+  webFrLClient_dispatchDecideForAction [label="WebFrameLoaderClient::dispatchDecidePolicyForNavigationAction"];
+  webFr_didReceivePolicyDecision [label="WebFrame::didReceivePolicyDecision"];
+  webPg_didReceivePolicyDecision [label="WebPage::didReceivePolicyDecision"];
+
+  uiWebPageProxy_decidePolicyForAction [label="WebPageProxy::decidePolicyForNavigationAction" color=red];
+  uiWKPageSet [label="WKPageSetPageNavigationClient::decidePolicyForNavigationAction" color=red];
+  embedder [color="blue"];
+  uiWebFrListenerProxy [label="WebFrameListenerProxy::receivedPolicyDecision" color=red];
+  uiWebFrProxy_didReceivePolicyDecision [label="WebFrameProxy::receivedPolicyDecision" color=red];
+  uiWebPgProxy_didReceivePolicyDecision [label="WebPageProxy::receivedPolicyDecision" color=red];
+
+  webFrLClient_dispatchDecideForAction -> uiWebPageProxy_decidePolicyForAction [label="IPC sync" style=dashed];
+  uiWebPageProxy_decidePolicyForAction -> uiWKPageSet [label="has m_navClient"];
+  uiWebPageProxy_decidePolicyForAction -> webFr_didReceivePolicyDecision [label="IPC sync Reply" style=dashed];
+
+  uiWKPageSet -> embedder
+  embedder -> uiWebFrListenerProxy [style=dashed];
+  uiWebFrListenerProxy -> uiWebFrProxy_didReceivePolicyDecision
+  -> uiWebPgProxy_didReceivePolicyDecision;
+  uiWebPgProxy_didReceivePolicyDecision -> webPg_didReceivePolicyDecision [style=dashed];
+  webPg_didReceivePolicyDecision -> webFr_didReceivePolicyDecision;
+}
