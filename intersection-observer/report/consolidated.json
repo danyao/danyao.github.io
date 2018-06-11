@@ -1,0 +1,1700 @@
+{
+  "ua": [
+    "cr67",
+    "sf12"
+  ],
+  "results": {
+    "/intersection-observer/bounding-box.html": {
+      "byUA": {
+        "cr67": "OK",
+        "sf12": "OK"
+      },
+      "UAmessage": {},
+      "totals": {
+        "OK": 2
+      },
+      "subtests": {
+        "Test that the target's border bounding box is used to calculate intersection.": {
+          "stNum": 0,
+          "byUA": {
+            "cr67": "PASS",
+            "sf12": "PASS"
+          },
+          "UAmessage": {},
+          "totals": {
+            "PASS": 2
+          }
+        },
+        "First rAF.": {
+          "stNum": 1,
+          "byUA": {
+            "cr67": "PASS",
+            "sf12": "FAIL"
+          },
+          "UAmessage": {
+            "sf12": "assert_equals: entries.length expected 1 but got 0"
+          },
+          "totals": {
+            "PASS": 1,
+            "FAIL": 1
+          }
+        },
+        "target.style.transform = 'translateY(195px)'": {
+          "stNum": 2,
+          "byUA": {
+            "cr67": "PASS",
+            "sf12": "FAIL"
+          },
+          "UAmessage": {
+            "sf12": "assert_equals: entries.length expected 2 but got 0"
+          },
+          "totals": {
+            "PASS": 1,
+            "FAIL": 1
+          }
+        }
+      }
+    },
+    "/intersection-observer/client-rect.html": {
+      "byUA": {
+        "cr67": "OK",
+        "sf12": "OK"
+      },
+      "UAmessage": {},
+      "totals": {
+        "OK": 2
+      },
+      "subtests": {
+        "IntersectionObserverEntry.boundingClientRect should match target.boundingClientRect()": {
+          "stNum": 0,
+          "byUA": {
+            "cr67": "PASS",
+            "sf12": "FAIL"
+          },
+          "UAmessage": {
+            "sf12": "The object is in the wrong document."
+          },
+          "totals": {
+            "PASS": 1,
+            "FAIL": 1
+          }
+        },
+        "First rAF should generate notification.": {
+          "stNum": 1,
+          "byUA": {
+            "cr67": "PASS"
+          },
+          "UAmessage": {},
+          "totals": {
+            "PASS": 1
+          }
+        }
+      }
+    },
+    "/intersection-observer/containing-block.html": {
+      "byUA": {
+        "cr67": "OK",
+        "sf12": "OK"
+      },
+      "UAmessage": {},
+      "totals": {
+        "OK": 2
+      },
+      "subtests": {
+        "IntersectionObserver should only report intersections if root is a containing block ancestor of target.": {
+          "stNum": 0,
+          "byUA": {
+            "cr67": "PASS",
+            "sf12": "PASS"
+          },
+          "UAmessage": {},
+          "totals": {
+            "PASS": 2
+          }
+        },
+        "In containing block and intersecting.": {
+          "stNum": 1,
+          "byUA": {
+            "cr67": "PASS",
+            "sf12": "FAIL"
+          },
+          "UAmessage": {
+            "sf12": "assert_equals: entries.length expected 1 but got 0"
+          },
+          "totals": {
+            "PASS": 1,
+            "FAIL": 1
+          }
+        },
+        "In containing block and not intersecting.": {
+          "stNum": 2,
+          "byUA": {
+            "cr67": "PASS",
+            "sf12": "FAIL"
+          },
+          "UAmessage": {
+            "sf12": "assert_equals: entries.length expected 2 but got 0"
+          },
+          "totals": {
+            "PASS": 1,
+            "FAIL": 1
+          }
+        },
+        "Not in containing block and intersecting.": {
+          "stNum": 3,
+          "byUA": {
+            "cr67": "PASS",
+            "sf12": "FAIL"
+          },
+          "UAmessage": {
+            "sf12": "assert_equals: entries.length expected 2 but got 0"
+          },
+          "totals": {
+            "PASS": 1,
+            "FAIL": 1
+          }
+        },
+        "Not in containing block and not intersecting.": {
+          "stNum": 4,
+          "byUA": {
+            "cr67": "PASS",
+            "sf12": "FAIL"
+          },
+          "UAmessage": {
+            "sf12": "assert_equals: entries.length expected 2 but got 1"
+          },
+          "totals": {
+            "PASS": 1,
+            "FAIL": 1
+          }
+        }
+      }
+    },
+    "/intersection-observer/cross-origin-iframe.html": {
+      "byUA": {
+        "cr67": "OK",
+        "sf12": "OK"
+      },
+      "UAmessage": {},
+      "totals": {
+        "OK": 2
+      },
+      "subtests": {
+        "Intersection observer test with no explicit root and target in a cross-origin iframe.": {
+          "stNum": 0,
+          "byUA": {
+            "cr67": "PASS",
+            "sf12": "PASS"
+          },
+          "UAmessage": {},
+          "totals": {
+            "PASS": 2
+          }
+        },
+        "First rAF": {
+          "stNum": 1,
+          "byUA": {
+            "cr67": "PASS",
+            "sf12": "FAIL"
+          },
+          "UAmessage": {
+            "sf12": "assert_equals: expected 1 but got 0"
+          },
+          "totals": {
+            "PASS": 1,
+            "FAIL": 1
+          }
+        },
+        "topDocument.scrollingElement.scrollTop = 200": {
+          "stNum": 2,
+          "byUA": {
+            "cr67": "PASS",
+            "sf12": "PASS"
+          },
+          "UAmessage": {},
+          "totals": {
+            "PASS": 2
+          }
+        },
+        "iframeDocument.scrollingElement.scrollTop = 250": {
+          "stNum": 3,
+          "byUA": {
+            "cr67": "PASS",
+            "sf12": "FAIL"
+          },
+          "UAmessage": {
+            "sf12": "assert_equals: expected 1 but got 0"
+          },
+          "totals": {
+            "PASS": 1,
+            "FAIL": 1
+          }
+        },
+        "topDocument.scrollingElement.scrollTop = 100": {
+          "stNum": 4,
+          "byUA": {
+            "cr67": "PASS",
+            "sf12": "FAIL"
+          },
+          "UAmessage": {
+            "sf12": "assert_equals: expected 1 but got 0"
+          },
+          "totals": {
+            "PASS": 1,
+            "FAIL": 1
+          }
+        }
+      }
+    },
+    "/intersection-observer/disconnect.html": {
+      "byUA": {
+        "cr67": "OK",
+        "sf12": "OK"
+      },
+      "UAmessage": {},
+      "totals": {
+        "OK": 2
+      },
+      "subtests": {
+        "IntersectionObserver should not deliver pending notifications after disconnect().": {
+          "stNum": 0,
+          "byUA": {
+            "cr67": "PASS",
+            "sf12": "PASS"
+          },
+          "UAmessage": {},
+          "totals": {
+            "PASS": 2
+          }
+        },
+        "First rAF.": {
+          "stNum": 1,
+          "byUA": {
+            "cr67": "PASS",
+            "sf12": "FAIL"
+          },
+          "UAmessage": {
+            "sf12": "assert_equals: Initial notification. expected 1 but got 0"
+          },
+          "totals": {
+            "PASS": 1,
+            "FAIL": 1
+          }
+        },
+        "observer.disconnect()": {
+          "stNum": 2,
+          "byUA": {
+            "cr67": "PASS",
+            "sf12": "FAIL"
+          },
+          "UAmessage": {
+            "sf12": "assert_equals: No new notifications. expected 1 but got 0"
+          },
+          "totals": {
+            "PASS": 1,
+            "FAIL": 1
+          }
+        }
+      }
+    },
+    "/intersection-observer/display-none.html": {
+      "byUA": {
+        "cr67": "OK",
+        "sf12": "OK"
+      },
+      "UAmessage": {},
+      "totals": {
+        "OK": 2
+      },
+      "subtests": {
+        "IntersectionObserver should send a not-intersecting notification for a target that gets display:none.": {
+          "stNum": 0,
+          "byUA": {
+            "cr67": "PASS",
+            "sf12": "PASS"
+          },
+          "UAmessage": {},
+          "totals": {
+            "PASS": 2
+          }
+        },
+        "Intersecting notification after first rAF.": {
+          "stNum": 1,
+          "byUA": {
+            "cr67": "PASS",
+            "sf12": "FAIL"
+          },
+          "UAmessage": {
+            "sf12": "assert_equals: entries.length expected 1 but got 0"
+          },
+          "totals": {
+            "PASS": 1,
+            "FAIL": 1
+          }
+        },
+        "Not-intersecting notification after setting display:none on target.": {
+          "stNum": 2,
+          "byUA": {
+            "cr67": "PASS",
+            "sf12": "FAIL"
+          },
+          "UAmessage": {
+            "sf12": "assert_equals: entries.length expected 2 but got 0"
+          },
+          "totals": {
+            "PASS": 1,
+            "FAIL": 1
+          }
+        },
+        "Intersecting notification after removing display:none on target.": {
+          "stNum": 3,
+          "byUA": {
+            "cr67": "PASS",
+            "sf12": "FAIL"
+          },
+          "UAmessage": {
+            "sf12": "assert_equals: entries.length expected 3 but got 0"
+          },
+          "totals": {
+            "PASS": 1,
+            "FAIL": 1
+          }
+        }
+      }
+    },
+    "/intersection-observer/edge-inclusive-intersection.html": {
+      "byUA": {
+        "cr67": "OK",
+        "sf12": "OK"
+      },
+      "UAmessage": {},
+      "totals": {
+        "OK": 2
+      },
+      "subtests": {
+        "IntersectionObserver should detect and report edge-adjacent and zero-area intersections.": {
+          "stNum": 0,
+          "byUA": {
+            "cr67": "PASS",
+            "sf12": "PASS"
+          },
+          "UAmessage": {},
+          "totals": {
+            "PASS": 2
+          }
+        },
+        "First rAF.": {
+          "stNum": 1,
+          "byUA": {
+            "cr67": "PASS",
+            "sf12": "FAIL"
+          },
+          "UAmessage": {
+            "sf12": "assert_equals: entries.length expected 1 but got 0"
+          },
+          "totals": {
+            "PASS": 1,
+            "FAIL": 1
+          }
+        },
+        "Set transform=translateY(200px) on target.": {
+          "stNum": 2,
+          "byUA": {
+            "cr67": "PASS",
+            "sf12": "FAIL"
+          },
+          "UAmessage": {
+            "sf12": "assert_equals: entries.length expected 2 but got 0"
+          },
+          "totals": {
+            "PASS": 1,
+            "FAIL": 1
+          }
+        },
+        "Set transform=translateY(201px) on target.": {
+          "stNum": 3,
+          "byUA": {
+            "cr67": "PASS",
+            "sf12": "FAIL"
+          },
+          "UAmessage": {
+            "sf12": "assert_equals: entries.length expected 3 but got 0"
+          },
+          "totals": {
+            "PASS": 1,
+            "FAIL": 1
+          }
+        },
+        "Set transform=translateY(185px) on target.": {
+          "stNum": 4,
+          "byUA": {
+            "cr67": "PASS",
+            "sf12": "FAIL"
+          },
+          "UAmessage": {
+            "sf12": "assert_equals: entries.length expected 4 but got 0"
+          },
+          "totals": {
+            "PASS": 1,
+            "FAIL": 1
+          }
+        }
+      }
+    },
+    "/intersection-observer/iframe-no-root.html": {
+      "byUA": {
+        "cr67": "OK",
+        "sf12": "OK"
+      },
+      "UAmessage": {},
+      "totals": {
+        "OK": 2
+      },
+      "subtests": {
+        "Observer with the implicit root; target in a same-origin iframe.": {
+          "stNum": 0,
+          "byUA": {
+            "cr67": "PASS",
+            "sf12": "FAIL"
+          },
+          "UAmessage": {
+            "sf12": "The object is in the wrong document."
+          },
+          "totals": {
+            "PASS": 1,
+            "FAIL": 1
+          }
+        },
+        "First rAF.": {
+          "stNum": 1,
+          "byUA": {
+            "cr67": "PASS"
+          },
+          "UAmessage": {},
+          "totals": {
+            "PASS": 1
+          }
+        },
+        "document.scrollingElement.scrollTop = 200": {
+          "stNum": 2,
+          "byUA": {
+            "cr67": "PASS"
+          },
+          "UAmessage": {},
+          "totals": {
+            "PASS": 1
+          }
+        },
+        "iframe.contentDocument.scrollingElement.scrollTop = 250": {
+          "stNum": 3,
+          "byUA": {
+            "cr67": "PASS"
+          },
+          "UAmessage": {},
+          "totals": {
+            "PASS": 1
+          }
+        },
+        "document.scrollingElement.scrollTop = 100": {
+          "stNum": 4,
+          "byUA": {
+            "cr67": "PASS"
+          },
+          "UAmessage": {},
+          "totals": {
+            "PASS": 1
+          }
+        }
+      }
+    },
+    "/intersection-observer/isIntersecting-change-events.html": {
+      "byUA": {
+        "cr67": "OK",
+        "sf12": "OK"
+      },
+      "UAmessage": {},
+      "totals": {
+        "OK": 2
+      },
+      "subtests": {
+        "isIntersecting changes should trigger notifications.": {
+          "stNum": 0,
+          "byUA": {
+            "cr67": "PASS",
+            "sf12": "PASS"
+          },
+          "UAmessage": {},
+          "totals": {
+            "PASS": 2
+          }
+        },
+        "Rects in initial notifications should report initial positions.": {
+          "stNum": 1,
+          "byUA": {
+            "cr67": "PASS",
+            "sf12": "FAIL"
+          },
+          "UAmessage": {
+            "sf12": "assert_equals: Has 3 initial notifications. expected 3 but got 0"
+          },
+          "totals": {
+            "PASS": 1,
+            "FAIL": 1
+          }
+        },
+        "Set scrollTop=100 and check for no new notifications.": {
+          "stNum": 2,
+          "byUA": {
+            "cr67": "PASS"
+          },
+          "UAmessage": {},
+          "totals": {
+            "PASS": 1
+          }
+        },
+        "Add 4th target.": {
+          "stNum": 3,
+          "byUA": {
+            "cr67": "PASS"
+          },
+          "UAmessage": {},
+          "totals": {
+            "PASS": 1
+          }
+        },
+        "Set scrollTop=100 and check for one new notification.": {
+          "stNum": 4,
+          "byUA": {
+            "cr67": "PASS"
+          },
+          "UAmessage": {},
+          "totals": {
+            "PASS": 1
+          }
+        }
+      }
+    },
+    "/intersection-observer/multiple-targets.html": {
+      "byUA": {
+        "cr67": "OK",
+        "sf12": "OK"
+      },
+      "UAmessage": {},
+      "totals": {
+        "OK": 2
+      },
+      "subtests": {
+        "One observer with multiple targets.": {
+          "stNum": 0,
+          "byUA": {
+            "cr67": "PASS",
+            "sf12": "PASS"
+          },
+          "UAmessage": {},
+          "totals": {
+            "PASS": 2
+          }
+        },
+        "First rAF.": {
+          "stNum": 1,
+          "byUA": {
+            "cr67": "PASS",
+            "sf12": "FAIL"
+          },
+          "UAmessage": {
+            "sf12": "assert_equals: Three initial notifications. expected 3 but got 0"
+          },
+          "totals": {
+            "PASS": 1,
+            "FAIL": 1
+          }
+        },
+        "document.scrollingElement.scrollTop = 150": {
+          "stNum": 2,
+          "byUA": {
+            "cr67": "PASS",
+            "sf12": "FAIL"
+          },
+          "UAmessage": {
+            "sf12": "assert_equals: Four notifications. expected 4 but got 0"
+          },
+          "totals": {
+            "PASS": 1,
+            "FAIL": 1
+          }
+        },
+        "document.scrollingElement.scrollTop = 10000": {
+          "stNum": 3,
+          "byUA": {
+            "cr67": "PASS",
+            "sf12": "FAIL"
+          },
+          "UAmessage": {
+            "sf12": "assert_equals: Six notifications. expected 6 but got 0"
+          },
+          "totals": {
+            "PASS": 1,
+            "FAIL": 1
+          }
+        },
+        "document.scrollingElement.scrollTop = 0": {
+          "stNum": 4,
+          "byUA": {
+            "cr67": "PASS",
+            "sf12": "FAIL"
+          },
+          "UAmessage": {
+            "sf12": "assert_equals: Nine notifications. expected 9 but got 0"
+          },
+          "totals": {
+            "PASS": 1,
+            "FAIL": 1
+          }
+        }
+      }
+    },
+    "/intersection-observer/multiple-thresholds.html": {
+      "byUA": {
+        "cr67": "OK",
+        "sf12": "OK"
+      },
+      "UAmessage": {},
+      "totals": {
+        "OK": 2
+      },
+      "subtests": {
+        "Observer with multiple thresholds.": {
+          "stNum": 0,
+          "byUA": {
+            "cr67": "PASS",
+            "sf12": "PASS"
+          },
+          "UAmessage": {},
+          "totals": {
+            "PASS": 2
+          }
+        },
+        "First rAF.": {
+          "stNum": 1,
+          "byUA": {
+            "cr67": "PASS",
+            "sf12": "FAIL"
+          },
+          "UAmessage": {
+            "sf12": "assert_equals: entries.length expected 1 but got 0"
+          },
+          "totals": {
+            "PASS": 1,
+            "FAIL": 1
+          }
+        },
+        "document.scrollingElement.scrollTop = 120": {
+          "stNum": 2,
+          "byUA": {
+            "cr67": "PASS",
+            "sf12": "FAIL"
+          },
+          "UAmessage": {
+            "sf12": "assert_equals: entries.length expected 2 but got 0"
+          },
+          "totals": {
+            "PASS": 1,
+            "FAIL": 1
+          }
+        },
+        "document.scrollingElement.scrollTop = 160": {
+          "stNum": 3,
+          "byUA": {
+            "cr67": "PASS",
+            "sf12": "FAIL"
+          },
+          "UAmessage": {
+            "sf12": "assert_equals: entries.length expected 3 but got 0"
+          },
+          "totals": {
+            "PASS": 1,
+            "FAIL": 1
+          }
+        },
+        "document.scrollingElement.scrollTop = 200": {
+          "stNum": 4,
+          "byUA": {
+            "cr67": "PASS",
+            "sf12": "FAIL"
+          },
+          "UAmessage": {
+            "sf12": "assert_equals: entries.length expected 4 but got 0"
+          },
+          "totals": {
+            "PASS": 1,
+            "FAIL": 1
+          }
+        },
+        "document.scrollingElement.scrollTop = 240": {
+          "stNum": 5,
+          "byUA": {
+            "cr67": "PASS",
+            "sf12": "FAIL"
+          },
+          "UAmessage": {
+            "sf12": "assert_equals: entries.length expected 5 but got 0"
+          },
+          "totals": {
+            "PASS": 1,
+            "FAIL": 1
+          }
+        },
+        "document.scrollingElement.scrollTop = window.innerHeight + 140": {
+          "stNum": 6,
+          "byUA": {
+            "cr67": "PASS",
+            "sf12": "FAIL"
+          },
+          "UAmessage": {
+            "sf12": "assert_equals: entries.length expected 6 but got 0"
+          },
+          "totals": {
+            "PASS": 1,
+            "FAIL": 1
+          }
+        },
+        "document.scrollingElement.scrollTop = window.innerHeight + 160": {
+          "stNum": 7,
+          "byUA": {
+            "cr67": "PASS",
+            "sf12": "FAIL"
+          },
+          "UAmessage": {
+            "sf12": "assert_equals: entries.length expected 7 but got 0"
+          },
+          "totals": {
+            "PASS": 1,
+            "FAIL": 1
+          }
+        },
+        "document.scrollingElement.scrollTop = window.innerHeight + 200": {
+          "stNum": 8,
+          "byUA": {
+            "cr67": "PASS",
+            "sf12": "FAIL"
+          },
+          "UAmessage": {
+            "sf12": "assert_equals: entries.length expected 8 but got 0"
+          },
+          "totals": {
+            "PASS": 1,
+            "FAIL": 1
+          }
+        },
+        "document.scrollingElement.scrollTop = window.innerHeight + 220": {
+          "stNum": 9,
+          "byUA": {
+            "cr67": "PASS"
+          },
+          "UAmessage": {},
+          "totals": {
+            "PASS": 1
+          }
+        }
+      }
+    },
+    "/intersection-observer/observer-attributes.html": {
+      "byUA": {
+        "cr67": "OK",
+        "sf12": "OK"
+      },
+      "UAmessage": {},
+      "totals": {
+        "OK": 2
+      },
+      "subtests": {
+        "Observer attribute getters.": {
+          "stNum": 0,
+          "byUA": {
+            "cr67": "PASS",
+            "sf12": "PASS"
+          },
+          "UAmessage": {},
+          "totals": {
+            "PASS": 2
+          }
+        },
+        "observer.root": {
+          "stNum": 1,
+          "byUA": {
+            "cr67": "PASS",
+            "sf12": "PASS"
+          },
+          "UAmessage": {},
+          "totals": {
+            "PASS": 2
+          }
+        },
+        "observer.thresholds": {
+          "stNum": 2,
+          "byUA": {
+            "cr67": "PASS",
+            "sf12": "PASS"
+          },
+          "UAmessage": {},
+          "totals": {
+            "PASS": 2
+          }
+        },
+        "observer.rootMargin": {
+          "stNum": 3,
+          "byUA": {
+            "cr67": "PASS",
+            "sf12": "FAIL"
+          },
+          "UAmessage": {
+            "sf12": "assert_equals: expected \"0px 0px 0px 0px\" but got \"0px\""
+          },
+          "totals": {
+            "PASS": 1,
+            "FAIL": 1
+          }
+        },
+        "set observer.root": {
+          "stNum": 4,
+          "byUA": {
+            "cr67": "PASS",
+            "sf12": "PASS"
+          },
+          "UAmessage": {},
+          "totals": {
+            "PASS": 2
+          }
+        },
+        "set observer.thresholds": {
+          "stNum": 5,
+          "byUA": {
+            "cr67": "PASS",
+            "sf12": "PASS"
+          },
+          "UAmessage": {},
+          "totals": {
+            "PASS": 2
+          }
+        },
+        "set observer.rootMargin": {
+          "stNum": 6,
+          "byUA": {
+            "cr67": "PASS",
+            "sf12": "FAIL"
+          },
+          "UAmessage": {
+            "sf12": "assert_equals: expected \"10% 20px 10% 20px\" but got \"10% 20px\""
+          },
+          "totals": {
+            "PASS": 1,
+            "FAIL": 1
+          }
+        }
+      }
+    },
+    "/intersection-observer/observer-exceptions.html": {
+      "byUA": {
+        "cr67": "OK",
+        "sf12": "OK"
+      },
+      "UAmessage": {},
+      "totals": {
+        "OK": 2
+      },
+      "subtests": {
+        "IntersectionObserver constructor with { threshold: [1.1] }": {
+          "stNum": 0,
+          "byUA": {
+            "cr67": "PASS",
+            "sf12": "FAIL"
+          },
+          "UAmessage": {
+            "sf12": "assert_throws: function \"function () {\n    new IntersectionObserver(e => {}, {threshold: [1.1]})\n  }\" did not throw"
+          },
+          "totals": {
+            "PASS": 1,
+            "FAIL": 1
+          }
+        },
+        "IntersectionObserver constructor with { threshold: [\"foo\"] }": {
+          "stNum": 1,
+          "byUA": {
+            "cr67": "PASS",
+            "sf12": "PASS"
+          },
+          "UAmessage": {},
+          "totals": {
+            "PASS": 2
+          }
+        },
+        "IntersectionObserver constructor witth { rootMargin: \"1\" }": {
+          "stNum": 2,
+          "byUA": {
+            "cr67": "PASS",
+            "sf12": "FAIL"
+          },
+          "UAmessage": {
+            "sf12": "assert_throws: function \"function () {\n    new IntersectionObserver(e => {}, {rootMargin: \"1\"})\n  }\" did not throw"
+          },
+          "totals": {
+            "PASS": 1,
+            "FAIL": 1
+          }
+        },
+        "IntersectionObserver constructor with { rootMargin: \"2em\" }": {
+          "stNum": 3,
+          "byUA": {
+            "cr67": "PASS",
+            "sf12": "FAIL"
+          },
+          "UAmessage": {
+            "sf12": "assert_throws: function \"function () {\n    new IntersectionObserver(e => {}, {rootMargin: \"2em\"})\n  }\" did not throw"
+          },
+          "totals": {
+            "PASS": 1,
+            "FAIL": 1
+          }
+        },
+        "IntersectionObserver constructor with { rootMargin: \"auto\" }": {
+          "stNum": 4,
+          "byUA": {
+            "cr67": "PASS",
+            "sf12": "FAIL"
+          },
+          "UAmessage": {
+            "sf12": "assert_throws: function \"function () {\n    new IntersectionObserver(e => {}, {rootMargin: \"auto\"})\n  }\" did not throw"
+          },
+          "totals": {
+            "PASS": 1,
+            "FAIL": 1
+          }
+        },
+        "IntersectionObserver constructor with { rootMargin: \"calc(1px + 2px)\" }": {
+          "stNum": 5,
+          "byUA": {
+            "cr67": "PASS",
+            "sf12": "FAIL"
+          },
+          "UAmessage": {
+            "sf12": "assert_throws: function \"function () {\n    new IntersectionObserver(e => {}, {rootMargin: \"calc(1px + 2px)\"})\n  }\" did not throw"
+          },
+          "totals": {
+            "PASS": 1,
+            "FAIL": 1
+          }
+        },
+        "IntersectionObserver constructor with { rootMargin: \"1px !important\" }": {
+          "stNum": 6,
+          "byUA": {
+            "cr67": "PASS",
+            "sf12": "FAIL"
+          },
+          "UAmessage": {
+            "sf12": "assert_throws: function \"function () {\n    new IntersectionObserver(e => {}, {rootMargin: \"1px !important\"})\n  }\" did not throw"
+          },
+          "totals": {
+            "PASS": 1,
+            "FAIL": 1
+          }
+        },
+        "IntersectionObserver constructor with { rootMargin: \"1px 1px 1px 1px 1px\" }": {
+          "stNum": 7,
+          "byUA": {
+            "cr67": "PASS",
+            "sf12": "FAIL"
+          },
+          "UAmessage": {
+            "sf12": "assert_throws: function \"function () {\n    new IntersectionObserver(e => {}, {rootMargin: \"1px 1px 1px 1px 1px\"})\n  }\" did not throw"
+          },
+          "totals": {
+            "PASS": 1,
+            "FAIL": 1
+          }
+        },
+        "IntersectionObserver.observe(\"foo\")": {
+          "stNum": 8,
+          "byUA": {
+            "cr67": "PASS",
+            "sf12": "PASS"
+          },
+          "UAmessage": {},
+          "totals": {
+            "PASS": 2
+          }
+        }
+      }
+    },
+    "/intersection-observer/observer-without-js-reference.html": {
+      "byUA": {
+        "cr67": "OK",
+        "sf12": "OK"
+      },
+      "UAmessage": {},
+      "totals": {
+        "OK": 2
+      },
+      "subtests": {
+        "IntersectionObserver that is unreachable in js should still generate notifications.": {
+          "stNum": 0,
+          "byUA": {
+            "cr67": "PASS",
+            "sf12": "PASS"
+          },
+          "UAmessage": {},
+          "totals": {
+            "PASS": 2
+          }
+        },
+        "First rAF": {
+          "stNum": 1,
+          "byUA": {
+            "cr67": "PASS",
+            "sf12": "FAIL"
+          },
+          "UAmessage": {
+            "sf12": "assert_equals: One notification. expected 1 but got 0"
+          },
+          "totals": {
+            "PASS": 1,
+            "FAIL": 1
+          }
+        },
+        "document.scrollingElement.scrollTop = 300": {
+          "stNum": 2,
+          "byUA": {
+            "cr67": "PASS",
+            "sf12": "FAIL"
+          },
+          "UAmessage": {
+            "sf12": "assert_equals: Two notifications. expected 2 but got 0"
+          },
+          "totals": {
+            "PASS": 1,
+            "FAIL": 1
+          }
+        }
+      }
+    },
+    "/intersection-observer/remove-element.html": {
+      "byUA": {
+        "cr67": "OK",
+        "sf12": "OK"
+      },
+      "UAmessage": {},
+      "totals": {
+        "OK": 2
+      },
+      "subtests": {
+        "Verify that not-intersecting notifications are sent when a target is removed from the DOM tree.": {
+          "stNum": 0,
+          "byUA": {
+            "cr67": "PASS",
+            "sf12": "PASS"
+          },
+          "UAmessage": {},
+          "totals": {
+            "PASS": 2
+          }
+        },
+        "First rAF": {
+          "stNum": 1,
+          "byUA": {
+            "cr67": "PASS",
+            "sf12": "FAIL"
+          },
+          "UAmessage": {
+            "sf12": "assert_equals: entries.length expected 1 but got 0"
+          },
+          "totals": {
+            "PASS": 1,
+            "FAIL": 1
+          }
+        },
+        "root.scrollTop = 150": {
+          "stNum": 2,
+          "byUA": {
+            "cr67": "PASS",
+            "sf12": "FAIL"
+          },
+          "UAmessage": {
+            "sf12": "assert_equals: entries.length expected 2 but got 0"
+          },
+          "totals": {
+            "PASS": 1,
+            "FAIL": 1
+          }
+        },
+        "root.removeChild(target).": {
+          "stNum": 3,
+          "byUA": {
+            "cr67": "PASS",
+            "sf12": "FAIL"
+          },
+          "UAmessage": {
+            "sf12": "assert_equals: entries.length expected 3 but got 0"
+          },
+          "totals": {
+            "PASS": 1,
+            "FAIL": 1
+          }
+        },
+        "root.insertBefore(target, trailingSpace).": {
+          "stNum": 4,
+          "byUA": {
+            "cr67": "PASS",
+            "sf12": "FAIL"
+          },
+          "UAmessage": {
+            "sf12": "assert_equals: entries.length expected 3 but got 0"
+          },
+          "totals": {
+            "PASS": 1,
+            "FAIL": 1
+          }
+        },
+        "root.scrollTop = 150 after reinserting target.": {
+          "stNum": 5,
+          "byUA": {
+            "cr67": "PASS",
+            "sf12": "FAIL"
+          },
+          "UAmessage": {
+            "sf12": "assert_equals: entries.length expected 4 but got 0"
+          },
+          "totals": {
+            "PASS": 1,
+            "FAIL": 1
+          }
+        }
+      }
+    },
+    "/intersection-observer/root-margin.html": {
+      "byUA": {
+        "cr67": "OK",
+        "sf12": "OK"
+      },
+      "UAmessage": {},
+      "totals": {
+        "OK": 2
+      },
+      "subtests": {
+        "Root margin tests": {
+          "stNum": 0,
+          "byUA": {
+            "cr67": "PASS",
+            "sf12": "PASS"
+          },
+          "UAmessage": {},
+          "totals": {
+            "PASS": 2
+          }
+        },
+        "First rAF.": {
+          "stNum": 1,
+          "byUA": {
+            "cr67": "PASS",
+            "sf12": "FAIL"
+          },
+          "UAmessage": {
+            "sf12": "assert_equals: entries.length expected 1 but got 0"
+          },
+          "totals": {
+            "PASS": 1,
+            "FAIL": 1
+          }
+        },
+        "document.scrollingElement.scrollLeft = 100": {
+          "stNum": 2,
+          "byUA": {
+            "cr67": "PASS",
+            "sf12": "FAIL"
+          },
+          "UAmessage": {
+            "sf12": "assert_equals: entries.length expected 2 but got 0"
+          },
+          "totals": {
+            "PASS": 1,
+            "FAIL": 1
+          }
+        },
+        "document.scrollingElement.scrollTop = document.documentElement.clientHeight + 200": {
+          "stNum": 3,
+          "byUA": {
+            "cr67": "PASS",
+            "sf12": "FAIL"
+          },
+          "UAmessage": {
+            "sf12": "assert_equals: entries.length expected 2 but got 0"
+          },
+          "totals": {
+            "PASS": 1,
+            "FAIL": 1
+          }
+        },
+        "document.scrollingElement.scrollTop = document.documentElement.clientHeight + 300": {
+          "stNum": 4,
+          "byUA": {
+            "cr67": "PASS",
+            "sf12": "FAIL"
+          },
+          "UAmessage": {
+            "sf12": "assert_equals: entries.length expected 3 but got 0"
+          },
+          "totals": {
+            "PASS": 1,
+            "FAIL": 1
+          }
+        }
+      }
+    },
+    "/intersection-observer/same-document-no-root.html": {
+      "byUA": {
+        "cr67": "OK",
+        "sf12": "OK"
+      },
+      "UAmessage": {},
+      "totals": {
+        "OK": 2
+      },
+      "subtests": {
+        "IntersectionObserver in a single document using the implicit root.": {
+          "stNum": 0,
+          "byUA": {
+            "cr67": "PASS",
+            "sf12": "PASS"
+          },
+          "UAmessage": {},
+          "totals": {
+            "PASS": 2
+          }
+        },
+        "First rAF.": {
+          "stNum": 1,
+          "byUA": {
+            "cr67": "PASS",
+            "sf12": "FAIL"
+          },
+          "UAmessage": {
+            "sf12": "assert_equals: entries.length expected 1 but got 0"
+          },
+          "totals": {
+            "PASS": 1,
+            "FAIL": 1
+          }
+        },
+        "document.scrollingElement.scrollTop = 300": {
+          "stNum": 2,
+          "byUA": {
+            "cr67": "PASS",
+            "sf12": "FAIL"
+          },
+          "UAmessage": {
+            "sf12": "assert_equals: entries.length expected 2 but got 0"
+          },
+          "totals": {
+            "PASS": 1,
+            "FAIL": 1
+          }
+        },
+        "document.scrollingElement.scrollTop = 100": {
+          "stNum": 3,
+          "byUA": {
+            "cr67": "PASS",
+            "sf12": "FAIL"
+          },
+          "UAmessage": {
+            "sf12": "assert_equals: entries.length expected 3 but got 0"
+          },
+          "totals": {
+            "PASS": 1,
+            "FAIL": 1
+          }
+        }
+      }
+    },
+    "/intersection-observer/same-document-root.html": {
+      "byUA": {
+        "cr67": "OK",
+        "sf12": "OK"
+      },
+      "UAmessage": {},
+      "totals": {
+        "OK": 2
+      },
+      "subtests": {
+        "IntersectionObserver in a single document with explicit root.": {
+          "stNum": 0,
+          "byUA": {
+            "cr67": "PASS",
+            "sf12": "PASS"
+          },
+          "UAmessage": {},
+          "totals": {
+            "PASS": 2
+          }
+        },
+        "First rAF": {
+          "stNum": 1,
+          "byUA": {
+            "cr67": "PASS",
+            "sf12": "FAIL"
+          },
+          "UAmessage": {
+            "sf12": "assert_equals: entries.length expected 1 but got 0"
+          },
+          "totals": {
+            "PASS": 1,
+            "FAIL": 1
+          }
+        },
+        "document.scrollingElement.scrollTop = window.innerHeight.": {
+          "stNum": 2,
+          "byUA": {
+            "cr67": "PASS",
+            "sf12": "FAIL"
+          },
+          "UAmessage": {
+            "sf12": "assert_equals: No notifications after scrolling frame. expected 1 but got 0"
+          },
+          "totals": {
+            "PASS": 1,
+            "FAIL": 1
+          }
+        },
+        "root.scrollTop = 150 with root scrolled into view.": {
+          "stNum": 3,
+          "byUA": {
+            "cr67": "PASS",
+            "sf12": "FAIL"
+          },
+          "UAmessage": {
+            "sf12": "assert_equals: entries.length expected 2 but got 0"
+          },
+          "totals": {
+            "PASS": 1,
+            "FAIL": 1
+          }
+        },
+        "document.scrollingElement.scrollTop = 0.": {
+          "stNum": 4,
+          "byUA": {
+            "cr67": "PASS",
+            "sf12": "FAIL"
+          },
+          "UAmessage": {
+            "sf12": "assert_equals: entries.length expected 2 but got 0"
+          },
+          "totals": {
+            "PASS": 1,
+            "FAIL": 1
+          }
+        },
+        "root.scrollTop = 0": {
+          "stNum": 5,
+          "byUA": {
+            "cr67": "PASS",
+            "sf12": "FAIL"
+          },
+          "UAmessage": {
+            "sf12": "assert_equals: entries.length expected 3 but got 0"
+          },
+          "totals": {
+            "PASS": 1,
+            "FAIL": 1
+          }
+        },
+        "root.scrollTop = 150 with root scrolled out of view.": {
+          "stNum": 6,
+          "byUA": {
+            "cr67": "PASS",
+            "sf12": "FAIL"
+          },
+          "UAmessage": {
+            "sf12": "assert_equals: entries.length expected 4 but got 0"
+          },
+          "totals": {
+            "PASS": 1,
+            "FAIL": 1
+          }
+        }
+      }
+    },
+    "/intersection-observer/same-document-zero-size-target.html": {
+      "byUA": {
+        "cr67": "OK",
+        "sf12": "OK"
+      },
+      "UAmessage": {},
+      "totals": {
+        "OK": 2
+      },
+      "subtests": {
+        "Observing a zero-area target.": {
+          "stNum": 0,
+          "byUA": {
+            "cr67": "PASS",
+            "sf12": "PASS"
+          },
+          "UAmessage": {},
+          "totals": {
+            "PASS": 2
+          }
+        },
+        "First rAF": {
+          "stNum": 1,
+          "byUA": {
+            "cr67": "PASS",
+            "sf12": "FAIL"
+          },
+          "UAmessage": {
+            "sf12": "assert_equals: entries.length expected 1 but got 0"
+          },
+          "totals": {
+            "PASS": 1,
+            "FAIL": 1
+          }
+        },
+        "document.scrollingElement.scrollTop = 300": {
+          "stNum": 2,
+          "byUA": {
+            "cr67": "PASS",
+            "sf12": "FAIL"
+          },
+          "UAmessage": {
+            "sf12": "assert_equals: entries.length expected 2 but got 0"
+          },
+          "totals": {
+            "PASS": 1,
+            "FAIL": 1
+          }
+        },
+        "document.scrollingElement.scrollTop = 100": {
+          "stNum": 3,
+          "byUA": {
+            "cr67": "PASS",
+            "sf12": "FAIL"
+          },
+          "UAmessage": {
+            "sf12": "assert_equals: entries.length expected 3 but got 0"
+          },
+          "totals": {
+            "PASS": 1,
+            "FAIL": 1
+          }
+        }
+      }
+    },
+    "/intersection-observer/shadow-content.html": {
+      "byUA": {
+        "cr67": "OK",
+        "sf12": "OK"
+      },
+      "UAmessage": {},
+      "totals": {
+        "OK": 2
+      },
+      "subtests": {
+        "Observing a target inside shadow DOM.": {
+          "stNum": 0,
+          "byUA": {
+            "cr67": "PASS",
+            "sf12": "PASS"
+          },
+          "UAmessage": {},
+          "totals": {
+            "PASS": 2
+          }
+        },
+        "First rAF after creating shadow DOM.": {
+          "stNum": 1,
+          "byUA": {
+            "cr67": "PASS",
+            "sf12": "FAIL"
+          },
+          "UAmessage": {
+            "sf12": "assert_equals: entries.length expected 1 but got 0"
+          },
+          "totals": {
+            "PASS": 1,
+            "FAIL": 1
+          }
+        }
+      }
+    },
+    "/intersection-observer/timestamp.html": {
+      "byUA": {
+        "cr67": "OK",
+        "sf12": "ERROR"
+      },
+      "UAmessage": {
+        "sf12": "WrongDocumentError: The object is in the wrong document."
+      },
+      "totals": {
+        "OK": 1,
+        "ERROR": 1
+      },
+      "subtests": {
+        "Check that timestamps correspond to the to execution context that created the observer.": {
+          "stNum": 0,
+          "byUA": {
+            "cr67": "PASS",
+            "sf12": "TIMEOUT"
+          },
+          "UAmessage": {
+            "sf12": "Test timed out"
+          },
+          "totals": {
+            "PASS": 1,
+            "TIMEOUT": 1
+          }
+        },
+        "First rAF after iframe is loaded.": {
+          "stNum": 1,
+          "byUA": {
+            "cr67": "PASS"
+          },
+          "UAmessage": {},
+          "totals": {
+            "PASS": 1
+          }
+        },
+        "Generate notifications.": {
+          "stNum": 2,
+          "byUA": {
+            "cr67": "PASS"
+          },
+          "UAmessage": {},
+          "totals": {
+            "PASS": 1
+          }
+        }
+      }
+    },
+    "/intersection-observer/unclipped-root.html": {
+      "byUA": {
+        "cr67": "OK",
+        "sf12": "OK"
+      },
+      "UAmessage": {},
+      "totals": {
+        "OK": 2
+      },
+      "subtests": {
+        "Test that border bounding box is used to calculate intersection with a non-scrolling root.": {
+          "stNum": 0,
+          "byUA": {
+            "cr67": "PASS",
+            "sf12": "PASS"
+          },
+          "UAmessage": {},
+          "totals": {
+            "PASS": 2
+          }
+        },
+        "First rAF.": {
+          "stNum": 1,
+          "byUA": {
+            "cr67": "PASS",
+            "sf12": "FAIL"
+          },
+          "UAmessage": {
+            "sf12": "assert_equals: entries.length expected 1 but got 0"
+          },
+          "totals": {
+            "PASS": 1,
+            "FAIL": 1
+          }
+        },
+        "target.style.transform = 'translateY(195px)'": {
+          "stNum": 2,
+          "byUA": {
+            "cr67": "PASS",
+            "sf12": "FAIL"
+          },
+          "UAmessage": {
+            "sf12": "assert_equals: entries.length expected 2 but got 0"
+          },
+          "totals": {
+            "PASS": 1,
+            "FAIL": 1
+          }
+        }
+      }
+    },
+    "/intersection-observer/zero-area-element-hidden.html": {
+      "byUA": {
+        "cr67": "OK",
+        "sf12": "OK"
+      },
+      "UAmessage": {},
+      "totals": {
+        "OK": 2
+      },
+      "subtests": {
+        "A zero-area hidden target should not be intersecting.": {
+          "stNum": 0,
+          "byUA": {
+            "cr67": "PASS",
+            "sf12": "PASS"
+          },
+          "UAmessage": {},
+          "totals": {
+            "PASS": 2
+          }
+        },
+        "First rAF.": {
+          "stNum": 1,
+          "byUA": {
+            "cr67": "PASS",
+            "sf12": "FAIL"
+          },
+          "UAmessage": {
+            "sf12": "assert_equals: entries.length expected 1 but got 0"
+          },
+          "totals": {
+            "PASS": 1,
+            "FAIL": 1
+          }
+        }
+      }
+    },
+    "/intersection-observer/zero-area-element-visible.html": {
+      "byUA": {
+        "cr67": "OK",
+        "sf12": "OK"
+      },
+      "UAmessage": {},
+      "totals": {
+        "OK": 2
+      },
+      "subtests": {
+        "Ensure that a zero-area target intersecting root generates a notification with intersectionRatio == 1": {
+          "stNum": 0,
+          "byUA": {
+            "cr67": "PASS",
+            "sf12": "PASS"
+          },
+          "UAmessage": {},
+          "totals": {
+            "PASS": 2
+          }
+        },
+        "First rAF should generate a notification.": {
+          "stNum": 1,
+          "byUA": {
+            "cr67": "PASS",
+            "sf12": "FAIL"
+          },
+          "UAmessage": {
+            "sf12": "assert_equals: One notification. expected 1 but got 0"
+          },
+          "totals": {
+            "PASS": 1,
+            "FAIL": 1
+          }
+        }
+      }
+    }
+  }
+}

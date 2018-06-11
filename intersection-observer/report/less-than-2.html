@@ -1,0 +1,321 @@
+<!DOCTYPE html>
+<html lang='en'>
+  <head>
+    <meta charset='utf-8'>
+    <title>Less Than 2 Passes</title>
+    <link rel='stylesheet' href='bootstrap.min.css'>
+    <link rel='stylesheet' href='analysis.css'>
+  </head>
+  <body>
+    <div class='container'>
+      <header>
+        <h1>Less Than 2 Passes</h1>
+      </header>
+      
+      <p><strong>Test files without 2 passes</strong>: 24; <strong>Subtests without 2 passes: </strong>82; <strong>Failure level</strong>: 82/109 (75.23%)</p>
+      <h3>Test Files</h3>
+<ol class='toc'><li><a href='#test-file-0'>/intersection-observer/bounding-box.html</a> <small>(2/3, 66.67%, 1.83% of total)</small></li>
+<li><a href='#test-file-1'>/intersection-observer/client-rect.html</a> <small>(2/2, 100.00%, 1.83% of total)</small></li>
+<li><a href='#test-file-2'>/intersection-observer/containing-block.html</a> <small>(4/5, 80.00%, 3.67% of total)</small></li>
+<li><a href='#test-file-3'>/intersection-observer/cross-origin-iframe.html</a> <small>(3/5, 60.00%, 2.75% of total)</small></li>
+<li><a href='#test-file-4'>/intersection-observer/disconnect.html</a> <small>(2/3, 66.67%, 1.83% of total)</small></li>
+<li><a href='#test-file-5'>/intersection-observer/display-none.html</a> <small>(3/4, 75.00%, 2.75% of total)</small></li>
+<li><a href='#test-file-6'>/intersection-observer/edge-inclusive-intersection.html</a> <small>(4/5, 80.00%, 3.67% of total)</small></li>
+<li><a href='#test-file-7'>/intersection-observer/iframe-no-root.html</a> <small>(5/5, 100.00%, 4.59% of total)</small></li>
+<li><a href='#test-file-8'>/intersection-observer/isIntersecting-change-events.html</a> <small>(4/5, 80.00%, 3.67% of total)</small></li>
+<li><a href='#test-file-9'>/intersection-observer/multiple-targets.html</a> <small>(4/5, 80.00%, 3.67% of total)</small></li>
+<li><a href='#test-file-10'>/intersection-observer/multiple-thresholds.html</a> <small>(9/10, 90.00%, 8.26% of total)</small></li>
+<li><a href='#test-file-11'>/intersection-observer/observer-attributes.html</a> <small>(2/7, 28.57%, 1.83% of total)</small></li>
+<li><a href='#test-file-12'>/intersection-observer/observer-exceptions.html</a> <small>(7/9, 77.78%, 6.42% of total)</small></li>
+<li><a href='#test-file-13'>/intersection-observer/observer-without-js-reference.html</a> <small>(2/3, 66.67%, 1.83% of total)</small></li>
+<li><a href='#test-file-14'>/intersection-observer/remove-element.html</a> <small>(5/6, 83.33%, 4.59% of total)</small></li>
+<li><a href='#test-file-15'>/intersection-observer/root-margin.html</a> <small>(4/5, 80.00%, 3.67% of total)</small></li>
+<li><a href='#test-file-16'>/intersection-observer/same-document-no-root.html</a> <small>(3/4, 75.00%, 2.75% of total)</small></li>
+<li><a href='#test-file-17'>/intersection-observer/same-document-root.html</a> <small>(6/7, 85.71%, 5.50% of total)</small></li>
+<li><a href='#test-file-18'>/intersection-observer/same-document-zero-size-target.html</a> <small>(3/4, 75.00%, 2.75% of total)</small></li>
+<li><a href='#test-file-19'>/intersection-observer/shadow-content.html</a> <small>(1/2, 50.00%, 0.92% of total)</small></li>
+<li><a href='#test-file-20'>/intersection-observer/timestamp.html</a> <small>(3/3, 100.00%, 2.75% of total)</small></li>
+<li><a href='#test-file-21'>/intersection-observer/unclipped-root.html</a> <small>(2/3, 66.67%, 1.83% of total)</small></li>
+<li><a href='#test-file-22'>/intersection-observer/zero-area-element-hidden.html</a> <small>(1/2, 50.00%, 0.92% of total)</small></li>
+<li><a href='#test-file-23'>/intersection-observer/zero-area-element-visible.html</a> <small>(1/2, 50.00%, 0.92% of total)</small></li>
+</ol>
+      <table class='table persist-area'>
+        <thead><tr class='persist-header'><th>Test <span class='message_toggle'>Show/Hide Messages</span></th><th>cr67</th><th>sf12</th></tr></thead>
+<tr class='test' id='test-file-0'><td><a href='http://www.w3c-test.org/intersection-observer/bounding-box.html' target='_blank'>/intersection-observer/bounding-box.html</a> <small>(2/3, 66.67%, 1.83% of total)</small></td><td class='OK'>OK</td><td class='OK'>OK</td></tr>
+<tr id='subtest-0-1' class='subtest'><td>First rAF.</td><td class='PASS'>PASS</td><td class='FAIL'>FAIL</td></tr>
+<tr class='messages'><td colspan='3'><table><tr class='message'><td class='ua'>sf12:</td><td> assert_equals: entries.length expected 1 but got 0</td></tr>
+</table></td></tr>
+<tr id='subtest-0-2' class='subtest'><td>target.style.transform = 'translateY(195px)'</td><td class='PASS'>PASS</td><td class='FAIL'>FAIL</td></tr>
+<tr class='messages'><td colspan='3'><table><tr class='message'><td class='ua'>sf12:</td><td> assert_equals: entries.length expected 2 but got 0</td></tr>
+</table></td></tr>
+<tr class='test' id='test-file-1'><td><a href='http://www.w3c-test.org/intersection-observer/client-rect.html' target='_blank'>/intersection-observer/client-rect.html</a> <small>(2/2, 100.00%, 1.83% of total)</small></td><td class='OK'>OK</td><td class='OK'>OK</td></tr>
+<tr id='subtest-1-1' class='subtest'><td>First rAF should generate notification.</td><td class='PASS'>PASS</td><td class='undefined'>-</td></tr>
+<tr id='subtest-1-0' class='subtest'><td>IntersectionObserverEntry.boundingClientRect should match target.boundingClientRect()</td><td class='PASS'>PASS</td><td class='FAIL'>FAIL</td></tr>
+<tr class='messages'><td colspan='3'><table><tr class='message'><td class='ua'>sf12:</td><td> The object is in the wrong document.</td></tr>
+</table></td></tr>
+<tr class='test' id='test-file-2'><td><a href='http://www.w3c-test.org/intersection-observer/containing-block.html' target='_blank'>/intersection-observer/containing-block.html</a> <small>(4/5, 80.00%, 3.67% of total)</small></td><td class='OK'>OK</td><td class='OK'>OK</td></tr>
+<tr id='subtest-2-1' class='subtest'><td>In containing block and intersecting.</td><td class='PASS'>PASS</td><td class='FAIL'>FAIL</td></tr>
+<tr class='messages'><td colspan='3'><table><tr class='message'><td class='ua'>sf12:</td><td> assert_equals: entries.length expected 1 but got 0</td></tr>
+</table></td></tr>
+<tr id='subtest-2-2' class='subtest'><td>In containing block and not intersecting.</td><td class='PASS'>PASS</td><td class='FAIL'>FAIL</td></tr>
+<tr class='messages'><td colspan='3'><table><tr class='message'><td class='ua'>sf12:</td><td> assert_equals: entries.length expected 2 but got 0</td></tr>
+</table></td></tr>
+<tr id='subtest-2-3' class='subtest'><td>Not in containing block and intersecting.</td><td class='PASS'>PASS</td><td class='FAIL'>FAIL</td></tr>
+<tr class='messages'><td colspan='3'><table><tr class='message'><td class='ua'>sf12:</td><td> assert_equals: entries.length expected 2 but got 0</td></tr>
+</table></td></tr>
+<tr id='subtest-2-4' class='subtest'><td>Not in containing block and not intersecting.</td><td class='PASS'>PASS</td><td class='FAIL'>FAIL</td></tr>
+<tr class='messages'><td colspan='3'><table><tr class='message'><td class='ua'>sf12:</td><td> assert_equals: entries.length expected 2 but got 1</td></tr>
+</table></td></tr>
+<tr class='test' id='test-file-3'><td><a href='http://www.w3c-test.org/intersection-observer/cross-origin-iframe.html' target='_blank'>/intersection-observer/cross-origin-iframe.html</a> <small>(3/5, 60.00%, 2.75% of total)</small></td><td class='OK'>OK</td><td class='OK'>OK</td></tr>
+<tr id='subtest-3-1' class='subtest'><td>First rAF</td><td class='PASS'>PASS</td><td class='FAIL'>FAIL</td></tr>
+<tr class='messages'><td colspan='3'><table><tr class='message'><td class='ua'>sf12:</td><td> assert_equals: expected 1 but got 0</td></tr>
+</table></td></tr>
+<tr id='subtest-3-3' class='subtest'><td>iframeDocument.scrollingElement.scrollTop = 250</td><td class='PASS'>PASS</td><td class='FAIL'>FAIL</td></tr>
+<tr class='messages'><td colspan='3'><table><tr class='message'><td class='ua'>sf12:</td><td> assert_equals: expected 1 but got 0</td></tr>
+</table></td></tr>
+<tr id='subtest-3-4' class='subtest'><td>topDocument.scrollingElement.scrollTop = 100</td><td class='PASS'>PASS</td><td class='FAIL'>FAIL</td></tr>
+<tr class='messages'><td colspan='3'><table><tr class='message'><td class='ua'>sf12:</td><td> assert_equals: expected 1 but got 0</td></tr>
+</table></td></tr>
+<tr class='test' id='test-file-4'><td><a href='http://www.w3c-test.org/intersection-observer/disconnect.html' target='_blank'>/intersection-observer/disconnect.html</a> <small>(2/3, 66.67%, 1.83% of total)</small></td><td class='OK'>OK</td><td class='OK'>OK</td></tr>
+<tr id='subtest-4-1' class='subtest'><td>First rAF.</td><td class='PASS'>PASS</td><td class='FAIL'>FAIL</td></tr>
+<tr class='messages'><td colspan='3'><table><tr class='message'><td class='ua'>sf12:</td><td> assert_equals: Initial notification. expected 1 but got 0</td></tr>
+</table></td></tr>
+<tr id='subtest-4-2' class='subtest'><td>observer.disconnect()</td><td class='PASS'>PASS</td><td class='FAIL'>FAIL</td></tr>
+<tr class='messages'><td colspan='3'><table><tr class='message'><td class='ua'>sf12:</td><td> assert_equals: No new notifications. expected 1 but got 0</td></tr>
+</table></td></tr>
+<tr class='test' id='test-file-5'><td><a href='http://www.w3c-test.org/intersection-observer/display-none.html' target='_blank'>/intersection-observer/display-none.html</a> <small>(3/4, 75.00%, 2.75% of total)</small></td><td class='OK'>OK</td><td class='OK'>OK</td></tr>
+<tr id='subtest-5-1' class='subtest'><td>Intersecting notification after first rAF.</td><td class='PASS'>PASS</td><td class='FAIL'>FAIL</td></tr>
+<tr class='messages'><td colspan='3'><table><tr class='message'><td class='ua'>sf12:</td><td> assert_equals: entries.length expected 1 but got 0</td></tr>
+</table></td></tr>
+<tr id='subtest-5-3' class='subtest'><td>Intersecting notification after removing display:none on target.</td><td class='PASS'>PASS</td><td class='FAIL'>FAIL</td></tr>
+<tr class='messages'><td colspan='3'><table><tr class='message'><td class='ua'>sf12:</td><td> assert_equals: entries.length expected 3 but got 0</td></tr>
+</table></td></tr>
+<tr id='subtest-5-2' class='subtest'><td>Not-intersecting notification after setting display:none on target.</td><td class='PASS'>PASS</td><td class='FAIL'>FAIL</td></tr>
+<tr class='messages'><td colspan='3'><table><tr class='message'><td class='ua'>sf12:</td><td> assert_equals: entries.length expected 2 but got 0</td></tr>
+</table></td></tr>
+<tr class='test' id='test-file-6'><td><a href='http://www.w3c-test.org/intersection-observer/edge-inclusive-intersection.html' target='_blank'>/intersection-observer/edge-inclusive-intersection.html</a> <small>(4/5, 80.00%, 3.67% of total)</small></td><td class='OK'>OK</td><td class='OK'>OK</td></tr>
+<tr id='subtest-6-1' class='subtest'><td>First rAF.</td><td class='PASS'>PASS</td><td class='FAIL'>FAIL</td></tr>
+<tr class='messages'><td colspan='3'><table><tr class='message'><td class='ua'>sf12:</td><td> assert_equals: entries.length expected 1 but got 0</td></tr>
+</table></td></tr>
+<tr id='subtest-6-4' class='subtest'><td>Set transform=translateY(185px) on target.</td><td class='PASS'>PASS</td><td class='FAIL'>FAIL</td></tr>
+<tr class='messages'><td colspan='3'><table><tr class='message'><td class='ua'>sf12:</td><td> assert_equals: entries.length expected 4 but got 0</td></tr>
+</table></td></tr>
+<tr id='subtest-6-2' class='subtest'><td>Set transform=translateY(200px) on target.</td><td class='PASS'>PASS</td><td class='FAIL'>FAIL</td></tr>
+<tr class='messages'><td colspan='3'><table><tr class='message'><td class='ua'>sf12:</td><td> assert_equals: entries.length expected 2 but got 0</td></tr>
+</table></td></tr>
+<tr id='subtest-6-3' class='subtest'><td>Set transform=translateY(201px) on target.</td><td class='PASS'>PASS</td><td class='FAIL'>FAIL</td></tr>
+<tr class='messages'><td colspan='3'><table><tr class='message'><td class='ua'>sf12:</td><td> assert_equals: entries.length expected 3 but got 0</td></tr>
+</table></td></tr>
+<tr class='test' id='test-file-7'><td><a href='http://www.w3c-test.org/intersection-observer/iframe-no-root.html' target='_blank'>/intersection-observer/iframe-no-root.html</a> <small>(5/5, 100.00%, 4.59% of total)</small></td><td class='OK'>OK</td><td class='OK'>OK</td></tr>
+<tr id='subtest-7-1' class='subtest'><td>First rAF.</td><td class='PASS'>PASS</td><td class='undefined'>-</td></tr>
+<tr id='subtest-7-0' class='subtest'><td>Observer with the implicit root; target in a same-origin iframe.</td><td class='PASS'>PASS</td><td class='FAIL'>FAIL</td></tr>
+<tr class='messages'><td colspan='3'><table><tr class='message'><td class='ua'>sf12:</td><td> The object is in the wrong document.</td></tr>
+</table></td></tr>
+<tr id='subtest-7-4' class='subtest'><td>document.scrollingElement.scrollTop = 100</td><td class='PASS'>PASS</td><td class='undefined'>-</td></tr>
+<tr id='subtest-7-2' class='subtest'><td>document.scrollingElement.scrollTop = 200</td><td class='PASS'>PASS</td><td class='undefined'>-</td></tr>
+<tr id='subtest-7-3' class='subtest'><td>iframe.contentDocument.scrollingElement.scrollTop = 250</td><td class='PASS'>PASS</td><td class='undefined'>-</td></tr>
+<tr class='test' id='test-file-8'><td><a href='http://www.w3c-test.org/intersection-observer/isIntersecting-change-events.html' target='_blank'>/intersection-observer/isIntersecting-change-events.html</a> <small>(4/5, 80.00%, 3.67% of total)</small></td><td class='OK'>OK</td><td class='OK'>OK</td></tr>
+<tr id='subtest-8-3' class='subtest'><td>Add 4th target.</td><td class='PASS'>PASS</td><td class='undefined'>-</td></tr>
+<tr id='subtest-8-1' class='subtest'><td>Rects in initial notifications should report initial positions.</td><td class='PASS'>PASS</td><td class='FAIL'>FAIL</td></tr>
+<tr class='messages'><td colspan='3'><table><tr class='message'><td class='ua'>sf12:</td><td> assert_equals: Has 3 initial notifications. expected 3 but got 0</td></tr>
+</table></td></tr>
+<tr id='subtest-8-2' class='subtest'><td>Set scrollTop=100 and check for no new notifications.</td><td class='PASS'>PASS</td><td class='undefined'>-</td></tr>
+<tr id='subtest-8-4' class='subtest'><td>Set scrollTop=100 and check for one new notification.</td><td class='PASS'>PASS</td><td class='undefined'>-</td></tr>
+<tr class='test' id='test-file-9'><td><a href='http://www.w3c-test.org/intersection-observer/multiple-targets.html' target='_blank'>/intersection-observer/multiple-targets.html</a> <small>(4/5, 80.00%, 3.67% of total)</small></td><td class='OK'>OK</td><td class='OK'>OK</td></tr>
+<tr id='subtest-9-1' class='subtest'><td>First rAF.</td><td class='PASS'>PASS</td><td class='FAIL'>FAIL</td></tr>
+<tr class='messages'><td colspan='3'><table><tr class='message'><td class='ua'>sf12:</td><td> assert_equals: Three initial notifications. expected 3 but got 0</td></tr>
+</table></td></tr>
+<tr id='subtest-9-4' class='subtest'><td>document.scrollingElement.scrollTop = 0</td><td class='PASS'>PASS</td><td class='FAIL'>FAIL</td></tr>
+<tr class='messages'><td colspan='3'><table><tr class='message'><td class='ua'>sf12:</td><td> assert_equals: Nine notifications. expected 9 but got 0</td></tr>
+</table></td></tr>
+<tr id='subtest-9-3' class='subtest'><td>document.scrollingElement.scrollTop = 10000</td><td class='PASS'>PASS</td><td class='FAIL'>FAIL</td></tr>
+<tr class='messages'><td colspan='3'><table><tr class='message'><td class='ua'>sf12:</td><td> assert_equals: Six notifications. expected 6 but got 0</td></tr>
+</table></td></tr>
+<tr id='subtest-9-2' class='subtest'><td>document.scrollingElement.scrollTop = 150</td><td class='PASS'>PASS</td><td class='FAIL'>FAIL</td></tr>
+<tr class='messages'><td colspan='3'><table><tr class='message'><td class='ua'>sf12:</td><td> assert_equals: Four notifications. expected 4 but got 0</td></tr>
+</table></td></tr>
+<tr class='test' id='test-file-10'><td><a href='http://www.w3c-test.org/intersection-observer/multiple-thresholds.html' target='_blank'>/intersection-observer/multiple-thresholds.html</a> <small>(9/10, 90.00%, 8.26% of total)</small></td><td class='OK'>OK</td><td class='OK'>OK</td></tr>
+<tr id='subtest-10-1' class='subtest'><td>First rAF.</td><td class='PASS'>PASS</td><td class='FAIL'>FAIL</td></tr>
+<tr class='messages'><td colspan='3'><table><tr class='message'><td class='ua'>sf12:</td><td> assert_equals: entries.length expected 1 but got 0</td></tr>
+</table></td></tr>
+<tr id='subtest-10-2' class='subtest'><td>document.scrollingElement.scrollTop = 120</td><td class='PASS'>PASS</td><td class='FAIL'>FAIL</td></tr>
+<tr class='messages'><td colspan='3'><table><tr class='message'><td class='ua'>sf12:</td><td> assert_equals: entries.length expected 2 but got 0</td></tr>
+</table></td></tr>
+<tr id='subtest-10-3' class='subtest'><td>document.scrollingElement.scrollTop = 160</td><td class='PASS'>PASS</td><td class='FAIL'>FAIL</td></tr>
+<tr class='messages'><td colspan='3'><table><tr class='message'><td class='ua'>sf12:</td><td> assert_equals: entries.length expected 3 but got 0</td></tr>
+</table></td></tr>
+<tr id='subtest-10-4' class='subtest'><td>document.scrollingElement.scrollTop = 200</td><td class='PASS'>PASS</td><td class='FAIL'>FAIL</td></tr>
+<tr class='messages'><td colspan='3'><table><tr class='message'><td class='ua'>sf12:</td><td> assert_equals: entries.length expected 4 but got 0</td></tr>
+</table></td></tr>
+<tr id='subtest-10-5' class='subtest'><td>document.scrollingElement.scrollTop = 240</td><td class='PASS'>PASS</td><td class='FAIL'>FAIL</td></tr>
+<tr class='messages'><td colspan='3'><table><tr class='message'><td class='ua'>sf12:</td><td> assert_equals: entries.length expected 5 but got 0</td></tr>
+</table></td></tr>
+<tr id='subtest-10-6' class='subtest'><td>document.scrollingElement.scrollTop = window.innerHeight + 140</td><td class='PASS'>PASS</td><td class='FAIL'>FAIL</td></tr>
+<tr class='messages'><td colspan='3'><table><tr class='message'><td class='ua'>sf12:</td><td> assert_equals: entries.length expected 6 but got 0</td></tr>
+</table></td></tr>
+<tr id='subtest-10-7' class='subtest'><td>document.scrollingElement.scrollTop = window.innerHeight + 160</td><td class='PASS'>PASS</td><td class='FAIL'>FAIL</td></tr>
+<tr class='messages'><td colspan='3'><table><tr class='message'><td class='ua'>sf12:</td><td> assert_equals: entries.length expected 7 but got 0</td></tr>
+</table></td></tr>
+<tr id='subtest-10-8' class='subtest'><td>document.scrollingElement.scrollTop = window.innerHeight + 200</td><td class='PASS'>PASS</td><td class='FAIL'>FAIL</td></tr>
+<tr class='messages'><td colspan='3'><table><tr class='message'><td class='ua'>sf12:</td><td> assert_equals: entries.length expected 8 but got 0</td></tr>
+</table></td></tr>
+<tr id='subtest-10-9' class='subtest'><td>document.scrollingElement.scrollTop = window.innerHeight + 220</td><td class='PASS'>PASS</td><td class='undefined'>-</td></tr>
+<tr class='test' id='test-file-11'><td><a href='http://www.w3c-test.org/intersection-observer/observer-attributes.html' target='_blank'>/intersection-observer/observer-attributes.html</a> <small>(2/7, 28.57%, 1.83% of total)</small></td><td class='OK'>OK</td><td class='OK'>OK</td></tr>
+<tr id='subtest-11-3' class='subtest'><td>observer.rootMargin</td><td class='PASS'>PASS</td><td class='FAIL'>FAIL</td></tr>
+<tr class='messages'><td colspan='3'><table><tr class='message'><td class='ua'>sf12:</td><td> assert_equals: expected "0px 0px 0px 0px" but got "0px"</td></tr>
+</table></td></tr>
+<tr id='subtest-11-6' class='subtest'><td>set observer.rootMargin</td><td class='PASS'>PASS</td><td class='FAIL'>FAIL</td></tr>
+<tr class='messages'><td colspan='3'><table><tr class='message'><td class='ua'>sf12:</td><td> assert_equals: expected "10% 20px 10% 20px" but got "10% 20px"</td></tr>
+</table></td></tr>
+<tr class='test' id='test-file-12'><td><a href='http://www.w3c-test.org/intersection-observer/observer-exceptions.html' target='_blank'>/intersection-observer/observer-exceptions.html</a> <small>(7/9, 77.78%, 6.42% of total)</small></td><td class='OK'>OK</td><td class='OK'>OK</td></tr>
+<tr id='subtest-12-6' class='subtest'><td>IntersectionObserver constructor with { rootMargin: "1px !important" }</td><td class='PASS'>PASS</td><td class='FAIL'>FAIL</td></tr>
+<tr class='messages'><td colspan='3'><table><tr class='message'><td class='ua'>sf12:</td><td> assert_throws: function "function () {
+    new IntersectionObserver(e =&gt; {}, {rootMargin: "1px !important"})
+  }" did not throw</td></tr>
+</table></td></tr>
+<tr id='subtest-12-7' class='subtest'><td>IntersectionObserver constructor with { rootMargin: "1px 1px 1px 1px 1px" }</td><td class='PASS'>PASS</td><td class='FAIL'>FAIL</td></tr>
+<tr class='messages'><td colspan='3'><table><tr class='message'><td class='ua'>sf12:</td><td> assert_throws: function "function () {
+    new IntersectionObserver(e =&gt; {}, {rootMargin: "1px 1px 1px 1px 1px"})
+  }" did not throw</td></tr>
+</table></td></tr>
+<tr id='subtest-12-3' class='subtest'><td>IntersectionObserver constructor with { rootMargin: "2em" }</td><td class='PASS'>PASS</td><td class='FAIL'>FAIL</td></tr>
+<tr class='messages'><td colspan='3'><table><tr class='message'><td class='ua'>sf12:</td><td> assert_throws: function "function () {
+    new IntersectionObserver(e =&gt; {}, {rootMargin: "2em"})
+  }" did not throw</td></tr>
+</table></td></tr>
+<tr id='subtest-12-4' class='subtest'><td>IntersectionObserver constructor with { rootMargin: "auto" }</td><td class='PASS'>PASS</td><td class='FAIL'>FAIL</td></tr>
+<tr class='messages'><td colspan='3'><table><tr class='message'><td class='ua'>sf12:</td><td> assert_throws: function "function () {
+    new IntersectionObserver(e =&gt; {}, {rootMargin: "auto"})
+  }" did not throw</td></tr>
+</table></td></tr>
+<tr id='subtest-12-5' class='subtest'><td>IntersectionObserver constructor with { rootMargin: "calc(1px + 2px)" }</td><td class='PASS'>PASS</td><td class='FAIL'>FAIL</td></tr>
+<tr class='messages'><td colspan='3'><table><tr class='message'><td class='ua'>sf12:</td><td> assert_throws: function "function () {
+    new IntersectionObserver(e =&gt; {}, {rootMargin: "calc(1px + 2px)"})
+  }" did not throw</td></tr>
+</table></td></tr>
+<tr id='subtest-12-0' class='subtest'><td>IntersectionObserver constructor with { threshold: [1.1] }</td><td class='PASS'>PASS</td><td class='FAIL'>FAIL</td></tr>
+<tr class='messages'><td colspan='3'><table><tr class='message'><td class='ua'>sf12:</td><td> assert_throws: function "function () {
+    new IntersectionObserver(e =&gt; {}, {threshold: [1.1]})
+  }" did not throw</td></tr>
+</table></td></tr>
+<tr id='subtest-12-2' class='subtest'><td>IntersectionObserver constructor witth { rootMargin: "1" }</td><td class='PASS'>PASS</td><td class='FAIL'>FAIL</td></tr>
+<tr class='messages'><td colspan='3'><table><tr class='message'><td class='ua'>sf12:</td><td> assert_throws: function "function () {
+    new IntersectionObserver(e =&gt; {}, {rootMargin: "1"})
+  }" did not throw</td></tr>
+</table></td></tr>
+<tr class='test' id='test-file-13'><td><a href='http://www.w3c-test.org/intersection-observer/observer-without-js-reference.html' target='_blank'>/intersection-observer/observer-without-js-reference.html</a> <small>(2/3, 66.67%, 1.83% of total)</small></td><td class='OK'>OK</td><td class='OK'>OK</td></tr>
+<tr id='subtest-13-1' class='subtest'><td>First rAF</td><td class='PASS'>PASS</td><td class='FAIL'>FAIL</td></tr>
+<tr class='messages'><td colspan='3'><table><tr class='message'><td class='ua'>sf12:</td><td> assert_equals: One notification. expected 1 but got 0</td></tr>
+</table></td></tr>
+<tr id='subtest-13-2' class='subtest'><td>document.scrollingElement.scrollTop = 300</td><td class='PASS'>PASS</td><td class='FAIL'>FAIL</td></tr>
+<tr class='messages'><td colspan='3'><table><tr class='message'><td class='ua'>sf12:</td><td> assert_equals: Two notifications. expected 2 but got 0</td></tr>
+</table></td></tr>
+<tr class='test' id='test-file-14'><td><a href='http://www.w3c-test.org/intersection-observer/remove-element.html' target='_blank'>/intersection-observer/remove-element.html</a> <small>(5/6, 83.33%, 4.59% of total)</small></td><td class='OK'>OK</td><td class='OK'>OK</td></tr>
+<tr id='subtest-14-1' class='subtest'><td>First rAF</td><td class='PASS'>PASS</td><td class='FAIL'>FAIL</td></tr>
+<tr class='messages'><td colspan='3'><table><tr class='message'><td class='ua'>sf12:</td><td> assert_equals: entries.length expected 1 but got 0</td></tr>
+</table></td></tr>
+<tr id='subtest-14-4' class='subtest'><td>root.insertBefore(target, trailingSpace).</td><td class='PASS'>PASS</td><td class='FAIL'>FAIL</td></tr>
+<tr class='messages'><td colspan='3'><table><tr class='message'><td class='ua'>sf12:</td><td> assert_equals: entries.length expected 3 but got 0</td></tr>
+</table></td></tr>
+<tr id='subtest-14-3' class='subtest'><td>root.removeChild(target).</td><td class='PASS'>PASS</td><td class='FAIL'>FAIL</td></tr>
+<tr class='messages'><td colspan='3'><table><tr class='message'><td class='ua'>sf12:</td><td> assert_equals: entries.length expected 3 but got 0</td></tr>
+</table></td></tr>
+<tr id='subtest-14-2' class='subtest'><td>root.scrollTop = 150</td><td class='PASS'>PASS</td><td class='FAIL'>FAIL</td></tr>
+<tr class='messages'><td colspan='3'><table><tr class='message'><td class='ua'>sf12:</td><td> assert_equals: entries.length expected 2 but got 0</td></tr>
+</table></td></tr>
+<tr id='subtest-14-5' class='subtest'><td>root.scrollTop = 150 after reinserting target.</td><td class='PASS'>PASS</td><td class='FAIL'>FAIL</td></tr>
+<tr class='messages'><td colspan='3'><table><tr class='message'><td class='ua'>sf12:</td><td> assert_equals: entries.length expected 4 but got 0</td></tr>
+</table></td></tr>
+<tr class='test' id='test-file-15'><td><a href='http://www.w3c-test.org/intersection-observer/root-margin.html' target='_blank'>/intersection-observer/root-margin.html</a> <small>(4/5, 80.00%, 3.67% of total)</small></td><td class='OK'>OK</td><td class='OK'>OK</td></tr>
+<tr id='subtest-15-1' class='subtest'><td>First rAF.</td><td class='PASS'>PASS</td><td class='FAIL'>FAIL</td></tr>
+<tr class='messages'><td colspan='3'><table><tr class='message'><td class='ua'>sf12:</td><td> assert_equals: entries.length expected 1 but got 0</td></tr>
+</table></td></tr>
+<tr id='subtest-15-2' class='subtest'><td>document.scrollingElement.scrollLeft = 100</td><td class='PASS'>PASS</td><td class='FAIL'>FAIL</td></tr>
+<tr class='messages'><td colspan='3'><table><tr class='message'><td class='ua'>sf12:</td><td> assert_equals: entries.length expected 2 but got 0</td></tr>
+</table></td></tr>
+<tr id='subtest-15-3' class='subtest'><td>document.scrollingElement.scrollTop = document.documentElement.clientHeight + 200</td><td class='PASS'>PASS</td><td class='FAIL'>FAIL</td></tr>
+<tr class='messages'><td colspan='3'><table><tr class='message'><td class='ua'>sf12:</td><td> assert_equals: entries.length expected 2 but got 0</td></tr>
+</table></td></tr>
+<tr id='subtest-15-4' class='subtest'><td>document.scrollingElement.scrollTop = document.documentElement.clientHeight + 300</td><td class='PASS'>PASS</td><td class='FAIL'>FAIL</td></tr>
+<tr class='messages'><td colspan='3'><table><tr class='message'><td class='ua'>sf12:</td><td> assert_equals: entries.length expected 3 but got 0</td></tr>
+</table></td></tr>
+<tr class='test' id='test-file-16'><td><a href='http://www.w3c-test.org/intersection-observer/same-document-no-root.html' target='_blank'>/intersection-observer/same-document-no-root.html</a> <small>(3/4, 75.00%, 2.75% of total)</small></td><td class='OK'>OK</td><td class='OK'>OK</td></tr>
+<tr id='subtest-16-1' class='subtest'><td>First rAF.</td><td class='PASS'>PASS</td><td class='FAIL'>FAIL</td></tr>
+<tr class='messages'><td colspan='3'><table><tr class='message'><td class='ua'>sf12:</td><td> assert_equals: entries.length expected 1 but got 0</td></tr>
+</table></td></tr>
+<tr id='subtest-16-3' class='subtest'><td>document.scrollingElement.scrollTop = 100</td><td class='PASS'>PASS</td><td class='FAIL'>FAIL</td></tr>
+<tr class='messages'><td colspan='3'><table><tr class='message'><td class='ua'>sf12:</td><td> assert_equals: entries.length expected 3 but got 0</td></tr>
+</table></td></tr>
+<tr id='subtest-16-2' class='subtest'><td>document.scrollingElement.scrollTop = 300</td><td class='PASS'>PASS</td><td class='FAIL'>FAIL</td></tr>
+<tr class='messages'><td colspan='3'><table><tr class='message'><td class='ua'>sf12:</td><td> assert_equals: entries.length expected 2 but got 0</td></tr>
+</table></td></tr>
+<tr class='test' id='test-file-17'><td><a href='http://www.w3c-test.org/intersection-observer/same-document-root.html' target='_blank'>/intersection-observer/same-document-root.html</a> <small>(6/7, 85.71%, 5.50% of total)</small></td><td class='OK'>OK</td><td class='OK'>OK</td></tr>
+<tr id='subtest-17-1' class='subtest'><td>First rAF</td><td class='PASS'>PASS</td><td class='FAIL'>FAIL</td></tr>
+<tr class='messages'><td colspan='3'><table><tr class='message'><td class='ua'>sf12:</td><td> assert_equals: entries.length expected 1 but got 0</td></tr>
+</table></td></tr>
+<tr id='subtest-17-4' class='subtest'><td>document.scrollingElement.scrollTop = 0.</td><td class='PASS'>PASS</td><td class='FAIL'>FAIL</td></tr>
+<tr class='messages'><td colspan='3'><table><tr class='message'><td class='ua'>sf12:</td><td> assert_equals: entries.length expected 2 but got 0</td></tr>
+</table></td></tr>
+<tr id='subtest-17-2' class='subtest'><td>document.scrollingElement.scrollTop = window.innerHeight.</td><td class='PASS'>PASS</td><td class='FAIL'>FAIL</td></tr>
+<tr class='messages'><td colspan='3'><table><tr class='message'><td class='ua'>sf12:</td><td> assert_equals: No notifications after scrolling frame. expected 1 but got 0</td></tr>
+</table></td></tr>
+<tr id='subtest-17-5' class='subtest'><td>root.scrollTop = 0</td><td class='PASS'>PASS</td><td class='FAIL'>FAIL</td></tr>
+<tr class='messages'><td colspan='3'><table><tr class='message'><td class='ua'>sf12:</td><td> assert_equals: entries.length expected 3 but got 0</td></tr>
+</table></td></tr>
+<tr id='subtest-17-3' class='subtest'><td>root.scrollTop = 150 with root scrolled into view.</td><td class='PASS'>PASS</td><td class='FAIL'>FAIL</td></tr>
+<tr class='messages'><td colspan='3'><table><tr class='message'><td class='ua'>sf12:</td><td> assert_equals: entries.length expected 2 but got 0</td></tr>
+</table></td></tr>
+<tr id='subtest-17-6' class='subtest'><td>root.scrollTop = 150 with root scrolled out of view.</td><td class='PASS'>PASS</td><td class='FAIL'>FAIL</td></tr>
+<tr class='messages'><td colspan='3'><table><tr class='message'><td class='ua'>sf12:</td><td> assert_equals: entries.length expected 4 but got 0</td></tr>
+</table></td></tr>
+<tr class='test' id='test-file-18'><td><a href='http://www.w3c-test.org/intersection-observer/same-document-zero-size-target.html' target='_blank'>/intersection-observer/same-document-zero-size-target.html</a> <small>(3/4, 75.00%, 2.75% of total)</small></td><td class='OK'>OK</td><td class='OK'>OK</td></tr>
+<tr id='subtest-18-1' class='subtest'><td>First rAF</td><td class='PASS'>PASS</td><td class='FAIL'>FAIL</td></tr>
+<tr class='messages'><td colspan='3'><table><tr class='message'><td class='ua'>sf12:</td><td> assert_equals: entries.length expected 1 but got 0</td></tr>
+</table></td></tr>
+<tr id='subtest-18-3' class='subtest'><td>document.scrollingElement.scrollTop = 100</td><td class='PASS'>PASS</td><td class='FAIL'>FAIL</td></tr>
+<tr class='messages'><td colspan='3'><table><tr class='message'><td class='ua'>sf12:</td><td> assert_equals: entries.length expected 3 but got 0</td></tr>
+</table></td></tr>
+<tr id='subtest-18-2' class='subtest'><td>document.scrollingElement.scrollTop = 300</td><td class='PASS'>PASS</td><td class='FAIL'>FAIL</td></tr>
+<tr class='messages'><td colspan='3'><table><tr class='message'><td class='ua'>sf12:</td><td> assert_equals: entries.length expected 2 but got 0</td></tr>
+</table></td></tr>
+<tr class='test' id='test-file-19'><td><a href='http://www.w3c-test.org/intersection-observer/shadow-content.html' target='_blank'>/intersection-observer/shadow-content.html</a> <small>(1/2, 50.00%, 0.92% of total)</small></td><td class='OK'>OK</td><td class='OK'>OK</td></tr>
+<tr id='subtest-19-1' class='subtest'><td>First rAF after creating shadow DOM.</td><td class='PASS'>PASS</td><td class='FAIL'>FAIL</td></tr>
+<tr class='messages'><td colspan='3'><table><tr class='message'><td class='ua'>sf12:</td><td> assert_equals: entries.length expected 1 but got 0</td></tr>
+</table></td></tr>
+<tr class='test' id='test-file-20'><td><a href='http://www.w3c-test.org/intersection-observer/timestamp.html' target='_blank'>/intersection-observer/timestamp.html</a> <small>(3/3, 100.00%, 2.75% of total)</small></td><td class='OK'>OK</td><td class='ERROR'>ERROR</td></tr>
+<tr id='subtest-20-0' class='subtest'><td>Check that timestamps correspond to the to execution context that created the observer.</td><td class='PASS'>PASS</td><td class='TIMEOUT'>TIMEOUT</td></tr>
+<tr class='messages'><td colspan='3'><table><tr class='message'><td class='ua'>sf12:</td><td> Test timed out</td></tr>
+</table></td></tr>
+<tr id='subtest-20-1' class='subtest'><td>First rAF after iframe is loaded.</td><td class='PASS'>PASS</td><td class='undefined'>-</td></tr>
+<tr id='subtest-20-2' class='subtest'><td>Generate notifications.</td><td class='PASS'>PASS</td><td class='undefined'>-</td></tr>
+<tr class='test' id='test-file-21'><td><a href='http://www.w3c-test.org/intersection-observer/unclipped-root.html' target='_blank'>/intersection-observer/unclipped-root.html</a> <small>(2/3, 66.67%, 1.83% of total)</small></td><td class='OK'>OK</td><td class='OK'>OK</td></tr>
+<tr id='subtest-21-1' class='subtest'><td>First rAF.</td><td class='PASS'>PASS</td><td class='FAIL'>FAIL</td></tr>
+<tr class='messages'><td colspan='3'><table><tr class='message'><td class='ua'>sf12:</td><td> assert_equals: entries.length expected 1 but got 0</td></tr>
+</table></td></tr>
+<tr id='subtest-21-2' class='subtest'><td>target.style.transform = 'translateY(195px)'</td><td class='PASS'>PASS</td><td class='FAIL'>FAIL</td></tr>
+<tr class='messages'><td colspan='3'><table><tr class='message'><td class='ua'>sf12:</td><td> assert_equals: entries.length expected 2 but got 0</td></tr>
+</table></td></tr>
+<tr class='test' id='test-file-22'><td><a href='http://www.w3c-test.org/intersection-observer/zero-area-element-hidden.html' target='_blank'>/intersection-observer/zero-area-element-hidden.html</a> <small>(1/2, 50.00%, 0.92% of total)</small></td><td class='OK'>OK</td><td class='OK'>OK</td></tr>
+<tr id='subtest-22-1' class='subtest'><td>First rAF.</td><td class='PASS'>PASS</td><td class='FAIL'>FAIL</td></tr>
+<tr class='messages'><td colspan='3'><table><tr class='message'><td class='ua'>sf12:</td><td> assert_equals: entries.length expected 1 but got 0</td></tr>
+</table></td></tr>
+<tr class='test' id='test-file-23'><td><a href='http://www.w3c-test.org/intersection-observer/zero-area-element-visible.html' target='_blank'>/intersection-observer/zero-area-element-visible.html</a> <small>(1/2, 50.00%, 0.92% of total)</small></td><td class='OK'>OK</td><td class='OK'>OK</td></tr>
+<tr id='subtest-23-1' class='subtest'><td>First rAF should generate a notification.</td><td class='PASS'>PASS</td><td class='FAIL'>FAIL</td></tr>
+<tr class='messages'><td colspan='3'><table><tr class='message'><td class='ua'>sf12:</td><td> assert_equals: One notification. expected 1 but got 0</td></tr>
+</table></td></tr>
+
+      </table>
+    </div>
+    <script src='jquery.min.js'></script>
+    <script src='sticky-headers.js'></script>
+    <script type='application/javascript'>
+      window.setTimeout(function() { 
+ $('.message_toggle').show();
+ $('.messages').toggle(); 
+ $('.message_toggle').on('click', function() {
+$('.messages').toggle();
+});
+}, 1000);
+    </script>
+  </body>
+</html>
