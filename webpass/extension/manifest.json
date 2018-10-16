@@ -1,0 +1,21 @@
+{
+  "name": "WebPass Extension",
+  "version": "1.0",
+  "description": "Seamless micropayment for web",
+  "browser_action": {
+    "default_popup": "popup.html"
+  },
+  "background": {
+    "scripts": ["background.js"],
+    "persistent": false
+  },
+  "content_scripts": [
+    {
+      "matches": ["http://*/*", "https://*/*"],
+      "css": ["styles.css"],
+      "js": ["content_script.js"]
+    }
+  ],
+  "permissions": ["activeTab"],
+  "manifest_version": 2
+}
