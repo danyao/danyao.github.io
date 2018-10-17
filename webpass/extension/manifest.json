@@ -16,6 +16,6 @@
       "js": ["content_script.js"]
     }
   ],
-  "permissions": ["activeTab"],
+  "permissions": ["activeTab", "storage"],
   "manifest_version": 2
 }
