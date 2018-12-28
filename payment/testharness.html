@@ -1,0 +1,23 @@
+<!doctype html>
+<html>
+  <head>
+    <title>Payment Request Test Harness</title>
+    <script>
+      let basicCard = {supportedMethods: 'basic-card'};
+      let supportedMethods = [basicCard];
+      let defaultDefaults = {
+        total: {
+          label: 'Total',
+          amount: {
+            currency: 'USD',
+            value: '1.00',
+          },
+        },
+      };
+    </script>
+  </head>
+  <body>
+    <p>This page sets up some basic data structure needed for manual testing of
+    Payment Request</p>
+  </body>
+</html>
