@@ -122,7 +122,7 @@ function buy() {
   }
 
   let methodData = [{
-    supported_methods: 'https://danyao.github.io/payment/alphapay'
+    supportedMethods: 'https://danyao.github.io/payment/alphapay'
   }];
   let details = {
     total: {
