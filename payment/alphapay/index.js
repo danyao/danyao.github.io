@@ -17,7 +17,7 @@ function checkInstallStatus() {
           uninstallHandler();
         }
       }
-      updateInstallStatus(!registration);
+      updateInstallStatus(!!registration);
     });
 }
 
@@ -81,4 +81,10 @@ function uninstallHanlder() {
         updateInstallStatus(!success);
       });
     });
+}
+
+/**
+ * Initiate buy flow.
+ */
+function buy() {
 }

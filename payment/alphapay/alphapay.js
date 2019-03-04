@@ -81,7 +81,7 @@ self.addEventListener("paymentrequest", e => {
 /**
  * Handles incoming communication from payment app UI.
  */
-navigator.serviceWorker.addEventListener('message', e => {
+self.addEventListener('message', e => {
   // ui.html sends this message when it finishes loading.
   if (e.data == 'payment_app_window_ready') {
     sendPaymentRequest();
