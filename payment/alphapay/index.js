@@ -129,7 +129,7 @@ function buy() {
       label: 'Total',
       amount: {
         currency: 'USD',
-        amount: '0.10',
+        value: '0.10',
       },
     },
   };
