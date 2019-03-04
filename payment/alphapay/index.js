@@ -63,6 +63,7 @@ function installHandler() {
       showError('Payment app capability not present.');
       return;
     }
+    // FIXME: can addInstruments be implemented inside the payment handler?
     addInstruments(registration).then(() => {
       updateInstallStatus(true);
     });
@@ -80,6 +81,24 @@ function uninstallHanlder() {
       registration.unregister().then(success => {
         updateInstallStatus(!success);
       });
+    });
+}
+
+/**
+ * Register default instruments for the payment handler.
+ */
+function addInstruments(registration) {
+  registration.paymentManager.userHint = "AlphaPay demo";
+  return registration.paymentManager.instruments.set(
+    "what-is-this-string?",
+    {
+      name: "My AlphaPay Account",
+      icons: [{
+        src: "/payment/alphapay/images/alpha_32.png",
+        size: "32x32",
+        type: "image/png",
+      }],
+      method: "https://danyao.github.io/payment/alphapay",
     });
 }
 
