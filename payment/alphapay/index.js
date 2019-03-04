@@ -9,7 +9,7 @@ function checkInstallStatus() {
     .then(registration => {
       if (registration) {
         // AlphaPay service worker is installed.
-        if (registration.paymentManager()) {
+        if (registration.paymentManager) {
           // Always update payment handler.
           registration.update();
         } else {
