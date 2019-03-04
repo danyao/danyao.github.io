@@ -51,6 +51,14 @@ function showError(errorMessage) {
   document.querySelector('#error').innerText = errorMessage;
 }
 
+function showDetails(response) {
+  let message = '';
+  if (response.toJSON) {
+    message = JSON.stringify(response, undefined, 2);
+  }
+  document.querySelector('#details').innerText = message;
+}
+
 /**
  * Installs the payment handler.
  */
@@ -66,7 +74,9 @@ function installHandler() {
     // FIXME: can addInstruments be implemented inside the payment handler?
     addInstruments(registration).then(() => {
       updateInstallStatus(true);
-    });
+    }).catch(error => {
+      showError(error);
+    });;
   }).catch(error => {
     showError(error);
   });
@@ -75,7 +85,7 @@ function installHandler() {
 /**
  * Uninstalls the payment handler.
  */
-function uninstallHanlder() {
+function uninstallHandler() {
   navigator.serviceWorker.getRegistration(kServiceWorkerURL)
     .then(registration => {
       registration.unregister().then(success => {
@@ -88,17 +98,17 @@ function uninstallHanlder() {
  * Register default instruments for the payment handler.
  */
 function addInstruments(registration) {
-  registration.paymentManager.userHint = "AlphaPay demo";
+  registration.paymentManager.userHint = 'AlphaPay demo';
   return registration.paymentManager.instruments.set(
-    "what-is-this-string?",
+    'what-is-this-string?',
     {
-      name: "My AlphaPay Account",
+      name: 'My AlphaPay Account',
       icons: [{
-        src: "/payment/alphapay/images/alpha_32.png",
-        size: "32x32",
-        type: "image/png",
+        src: '/payment/alphapay/images/alpha_32.png',
+        size: '32x32',
+        type: 'image/png',
       }],
-      method: "https://danyao.github.io/payment/alphapay",
+      method: 'https://danyao.github.io/payment/alphapay',
     });
 }
 
@@ -106,4 +116,27 @@ function addInstruments(registration) {
  * Initiate buy flow.
  */
 function buy() {
+  if (!window.PaymentRequest) {
+    showError('PaymentRequest is not supported.');
+    return;
+  }
+
+  let methodData = [{
+    supported_methods: 'https://danyao.github.io/payment/alphapay'
+  }];
+  let details = {
+    total: {
+      label: 'Total',
+      amount: {
+        currency: 'USD',
+        amount: '0.10',
+      },
+    },
+  };
+  let request = new PaymentRequest(methodData, details);
+  request.show().then(response => {
+    response.complete('success').then(() => {
+      showDetails(response);
+    });
+  });
 }
