@@ -27,11 +27,12 @@ proto-wallet
 |-- images
 |-- src
 |-- test
-|-- index.html
+|-- public
+  |-- index.html
+  |-- manifest.json
+  |-- service-worker.js
 |-- README.md
 |-- package.json
-|-- manifest.json
-|-- service-worker.js
 ```
 
 Function components:
