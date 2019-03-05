@@ -20,13 +20,13 @@ class PromiseResolver {
 console.log("AlphaPay payment handler demo. This is the Service Worker.");
 
 // This must be in the "supported_origins" list in payment-manifest.json.
-const origin = "https://danyao.github.io";
+const origin = "https://pay.stillmuchtoponder.com";
 
 // This points to the location of payment-manifest.json.
-const methodName = `${origin}/payment/alphapay`;
+const methodName = `${origin}/alphapay`;
 
 // Location of the payment handler UI.
-const uiURL = `${origin}/payment/alphapay/ui.html`;
+const uiURL = `${origin}/alphapay/ui.html`;
 
 // These are global because they are initialized in the 'paymentrequest' event
 // handler and used later to resolve the payment request.

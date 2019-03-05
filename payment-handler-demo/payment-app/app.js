@@ -58,6 +58,16 @@ app.post('/refund', urlencodedParser, (req, res) => {
 
 app.use(express.static('static'));
 
+// AlphaPay code
+app.use('/alphapay', (req, res, next) => {
+  res.status(200).links({
+    'payment-method-manifest': 'https://pay.stillmuchtoponder.com/alphapay/payment-manifest.json'
+  });
+  return next();
+});
+app.use('/alphapay', express.static('alphapay'));
+
+// Main method
 if (module === require.main) {
   const server = app.listen(process.env.PORT || 8080, () => {
     const port = server.address().port;

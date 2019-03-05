@@ -108,7 +108,7 @@ function addInstruments(registration) {
         size: '32x32',
         type: 'image/png',
       }],
-      method: 'https://danyao.github.io/payment/alphapay',
+      method: 'https://pay.stillmuchtoponder.com/alphapay',
     });
 }
 
@@ -122,7 +122,7 @@ function buy() {
   }
 
   let methodData = [{
-    supportedMethods: 'https://danyao.github.io/payment/alphapay'
+    supportedMethods: 'https://pay.stillmuchtoponder.com/alphapay'
   }];
   let details = {
     total: {

@@ -1,6 +1,6 @@
 {
   "default_applications": [
-    "https://danyao.github.io/payment/alphapay/alphapay.json"
+    "https://pay.stillmuchtoponder.com/alphapay/alphapay.json"
   ],
   "supported_origins": [
     "https://danyao.github.io"
