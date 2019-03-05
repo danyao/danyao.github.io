@@ -37,7 +37,7 @@ let paymentRequestResolver = undefined;
 // when user selects AlphaPay in the browser payment sheet to handler the active
 // Payment Request. This is the main entry point for the payment handler.
 self.addEventListener("paymentrequest", e => {
-  let paymentRequestEvent = e;
+  paymentRequestEvent = e;
   console.log("Received PaymentRequest: ", paymentRequestEvent);
 
   paymentRequestResolver = new PromiseResolver();
