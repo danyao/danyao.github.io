@@ -3,6 +3,20 @@
  * Adapted from https://fidoalliance.org/webauthn-tutorial/
  */
 
+const ERROR='error';
+const INFO='status';
+
+// Simulated server-side data.
+let _server = {};
+
+/**
+ * Helper function to append a log message to screen.
+ */
+function log(type, message) {
+  let output = document.querySelector('#webauthn-auth-status');
+  output.insertAdjacentHTML('beforeend', `<pre class="${type}">${message}</pre>`);
+}
+
 /**
  * Returns a random 32-byte challenge.
  */
@@ -13,8 +27,17 @@ function randomChallenge(size) {
 }
 
 function registerCredential() {
+  if (!navigator || !navigator.credentials) {
+    log(ERROR, 'WebAuthn not supported.');
+    return;
+  }
+
+  let challenge = randomChallenge(32);
+  _server.challenge = btoa(challenge);
+  log(INFO, `Client challenge: ${_server.challenge}`);
+
   let publicKey = {
-    challenge: randomChallenge(32),
+    challenge,
 
     rp: {
       name: "AlphaPay Demo"
@@ -39,17 +62,44 @@ function registerCredential() {
   };
 
   navigator.credentials.create({ publicKey }).then(credential => {
-    document.querySelector('#webauthn-cred').value = credential.id;
+    simulateServerSideValidateCredential(credential);
     console.log(credential);
   }).catch(error => {
-    console.log('Failed to creat credential: ', error);
+    log(ERROR, `Failed to create credential: ${error}`);
   });
+}
+
+/**
+ * Simulates credential validation steps that would normally be done on
+ * the server side.
+ * Returns the validated ID that would be stored on server side, or
+ * null if validation fails.
+ */
+function simulateServerSideValidateCredential(credential) {
+  // Verify that credeitnail contains the same data this client presented
+  // to generate the credential.
+  const utf8Decoder = new TextDecoder('utf-8');
+  const decodedClientData = utf8Decoder.decode(
+    credential.response.clientDataJSON);
+  const clientDataObj = JSON.parse(decodedClientData);
+
+  if (clientDataObj.type != 'webauthn.create') {
+    return null;
+  }
+  // TODO: add other checks
+
+  log(INFO, `Received clientData: ${JSON.stringify(clientDataObj, undefined, 2)}`);
 }
 
 /**
  * Authenticates the user using the public key ID from #webauthn-cred.
  */
 function authenticate() {
+  if (!navigator || !navigator.credentials) {
+    showError('WebAuthn not supported.');
+    return;
+  }
+
   const credentialId = document.querySelector('#webauthn-cred').value;
   const publicKey = {
     challenge: randomChallenge(32),

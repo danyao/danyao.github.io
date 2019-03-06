@@ -111,6 +111,11 @@ function sendPaymentRequest() {
     type: 'window',
   };
 
+  if (!paymentRequestEvent) {
+    console.log('No active payment request');
+    return;
+  }
+
   clients.matchAll(options).then(clientList => {
     clientList.forEach(client => {
       client.postMessage({
