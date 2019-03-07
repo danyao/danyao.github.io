@@ -26,7 +26,7 @@ const origin = "https://pay.stillmuchtoponder.com";
 const methodName = `${origin}/alphapay`;
 
 // Location of the payment handler UI.
-const uiURL = `${origin}/alphapay/ui.html`;
+let uiURL = `${origin}/alphapay/ui.html`;
 
 // These are global because they are initialized in the 'paymentrequest' event
 // handler and used later to resolve the payment request.
@@ -75,8 +75,8 @@ self.addEventListener("paymentrequest", e => {
     ...e.methodData[0].data,
   });
   if (additionalPaymentMethodData.ui == 'crbug938491') {
-    uiURL = `${origin}/alphapay/crbug938491/ui.html`;
     console.log(`Using UI variation: ${additionalPaymentMethodData.ui}`);
+    uiURL = `${origin}/alphapay/crbug938491/ui.html`;
   }
   e.openWindow(uiURL)
       .then(windowClient => {
