@@ -12,6 +12,10 @@
       be prompted to tap your security key and generate a new credential.
     </p>
     <script>
+      function log(message) {
+        document.querySelector('#output').innerText = message;
+      }
+
       function buy() {
         const methodData = Object.freeze({
           supportedMethods: 'https://pay.stillmuchtoponder.com/alphapay',
@@ -30,11 +34,13 @@
         });
 
         if (!window.PaymentRequest) {
-          document.querySelector('#output').innerText = 'PaymentRequest is not supported.'
+          log('PaymentRequest is not supported.');
         }
         let request = new PaymentRequest([methodData], details);
         request.show().then(response => {
-          document.querySelector('#output').innerText = JSON.stringify(response, undefined, 2);
+          log(JSON.stringify(response, undefined, 2));
+        }).catch(e => {
+          log(e.message);
         })
       }
     </script>
