@@ -67,6 +67,16 @@ self.addEventListener("paymentrequest", e => {
     return;
   }
 
+  // Reproduction example for crbug.com/938491
+  const additionalPaymentMethodData = Object.freeze({
+    ...e.methodData[0].data,
+    ...{
+      ui: 'default',
+    }
+  });
+  if (additionalPaymentMethodData.ui == 'crbug938491') {
+    uiURL = `${origin}/alphapay/crbug938491/ui.html`;
+  }
   e.openWindow(uiURL)
       .then(windowClient => {
         if (!windowClient) {

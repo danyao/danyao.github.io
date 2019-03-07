@@ -1,6 +1,5 @@
 /*
  * Minimalistic WebAuthn implementation.
- * Adapted from https://fidoalliance.org/webauthn-tutorial/
  */
 
 const ERROR='error';
@@ -13,7 +12,10 @@ let _server = {};
  * Helper function to append a log message to screen.
  */
 function log(type, message) {
-  let output = document.querySelector('#webauthn-auth-status');
+  let output = document.querySelector('#webauthn-logs');
+  if (!output) {
+    document.body.insertAdjacentHTML('beforeend', '<div id="webauthn-logs"></div>');
+  }
   output.insertAdjacentHTML('beforeend', `<pre class="${type}">${message}</pre>`);
 }
 
@@ -26,6 +28,9 @@ function randomChallenge(size) {
   return randomChallengeBuffer;
 }
 
+/**
+ * Create a new public key credential.
+ */
 function registerCredential() {
   if (!navigator || !navigator.credentials) {
     log(ERROR, 'WebAuthn not supported.');
@@ -44,9 +49,9 @@ function registerCredential() {
     },
 
     user: {
-      id: Uint8Array.from('UZSL85T9AFC', c => c.charCodeAt(0)),
-      name: 'test@alphapay.stillmuchtoponder.com',
-      displayName: 'Danyao',
+      id: Uint8Array.from('RANDOMUSERID', c => c.charCodeAt(0)),
+      name: 'test user',
+      displayName: 'Test User',
     },
 
     pubKeyCredParams: [
