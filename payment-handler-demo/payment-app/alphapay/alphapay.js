@@ -69,13 +69,14 @@ self.addEventListener("paymentrequest", e => {
 
   // Reproduction example for crbug.com/938491
   const additionalPaymentMethodData = Object.freeze({
-    ...e.methodData[0].data,
     ...{
       ui: 'default',
-    }
+    },
+    ...e.methodData[0].data,
   });
   if (additionalPaymentMethodData.ui == 'crbug938491') {
     uiURL = `${origin}/alphapay/crbug938491/ui.html`;
+    console.log(`Using UI variation: ${additionalPaymentMethodData.ui}`);
   }
   e.openWindow(uiURL)
       .then(windowClient => {
