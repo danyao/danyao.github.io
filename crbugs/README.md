@@ -1,4 +1,4 @@
 # Chromium Bugs Report Reproduction Test Cases
 
-- csp_crbug821625.html
-- crbug941271
+- [crbug 821625](csp_crbug821625.html)
+- [crbug 941271](payment_request_inactive_dom.html)
