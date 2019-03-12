@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Reproduction test case for crbug.com/</title>
+  </head>
+  <body>
+    <script>
+      const methodData = Object.freeze({
+        supportedMethods: 'basic-card',
+      });
+      const details = Object.freeze({
+        total: {
+          label: "Total",
+          amount: {
+            currency: "USD",
+            value: "5.00",
+          },
+        },
+      });
+
+      function getLoadedPaymentRequest(iframe, url) {
+        return new Promise(resolve => {
+          iframe.addEventListener(
+            'load',
+            () => {
+              const request = new iframe.contentWindow.PaymentRequest(
+                [methodData], details);
+              resolve(request);
+              console.log(`Loaded ${iframe.src} and request `, request);
+            },
+            { once: true }
+          );
+          iframe.src = url;
+        });
+      }
+
+      async function runTest() {
+        const iframe = document.createElement('iframe');
+        document.body.appendChild(iframe);
+
+        // Navigate the iframe to page1.html, grab a PaymentRequest instance.
+        const request1 = await getLoadedPaymentRequest(iframe, 'page1.html');
+
+        // Navigate the iframe again, putting request1's document into an inactive state.
+        const request2 = await getLoadedPaymentRequest(iframe, 'page2.html');
+
+        // Now request1's relevant global object's document is no longer active.
+        // So .show() should reject with an error.
+        request1.show().then(() => {
+          document.querySelector('#output').innerText = 'If you see this, the test has failed because .show() did not throw.';
+        }).catch(e => {
+          document.querySelector('#output').innerText = `The test has passed if AbortError is thrown. Got: ${error}`;
+        });
+      }
+
+    </script>
+    <button id="start" onclick="runTest()">Run Test</button>
+    <div id='output'>
+      If you see this, the test has failed because the promise from .show() neither resolved or rejected.
+    </div>
+  </body>
+</html>
