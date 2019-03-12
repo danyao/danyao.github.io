@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <html>
   <head>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>Reproduction test case for crbug.com/</title>
   </head>
   <body>
@@ -35,6 +36,9 @@
       }
 
       async function runTest() {
+        document.querySelector('#output').innerText = 'Running test...';
+        document.querySelector('#start').disabled = true;
+
         const iframe = document.createElement('iframe');
         document.body.appendChild(iframe);
 
@@ -46,17 +50,18 @@
 
         // Now request1's relevant global object's document is no longer active.
         // So .show() should reject with an error.
-        request1.show().then(() => {
+        const acceptPromise = request1.show();
+        acceptPromise.then(() => {
           document.querySelector('#output').innerText = 'If you see this, the test has failed because .show() did not throw.';
         }).catch(e => {
-          document.querySelector('#output').innerText = `The test has passed if AbortError is thrown. Got: ${error}`;
+          document.querySelector('#output').innerText = `The test has passed if AbortError is thrown. Got: ${e}`;
+          console.log(e);
         });
       }
 
     </script>
+    <h2>Repro test case for <a href="https://crbug.com/941271">crbug.com/941271</a></h2>
     <button id="start" onclick="runTest()">Run Test</button>
-    <div id='output'>
-      If you see this, the test has failed because the promise from .show() neither resolved or rejected.
-    </div>
+    <div id='output'></div>
   </body>
 </html>
