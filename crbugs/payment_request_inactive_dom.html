@@ -56,6 +56,8 @@
         }).catch(e => {
           document.querySelector('#output').innerText = `The test has passed if AbortError is thrown. Got: ${e}`;
           console.log(e);
+        }).finally(() => {
+          document.querySelector('#output').innerText = 'Test failed. Promise neither rejected or resolved.';
         });
       }
 
