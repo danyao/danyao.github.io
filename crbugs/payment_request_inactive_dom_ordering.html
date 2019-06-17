@@ -44,13 +44,13 @@
 
         // Navigate the iframe to page1.html, grab a PaymentRequest instance.
         const request1 = await getLoadedPaymentRequest(iframe, 'page1.html');
+        const acceptPromise = request1.show();
 
         // Navigate the iframe again, putting request1's document into an inactive state.
         const request2 = await getLoadedPaymentRequest(iframe, 'page2.html');
 
         // Now request1's relevant global object's document is no longer active.
         // So .show() should reject with an error.
-        const acceptPromise = request1.show();
         acceptPromise.then(() => {
           document.querySelector('#output').innerText = 'If you see this, the test has failed because .show() did not throw.';
         }).catch(e => {
